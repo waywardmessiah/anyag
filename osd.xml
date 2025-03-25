@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/" xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+	<ShortName>anythingagricult</ShortName>
+	<Description>Search Anything Agriculture - Empowering Your Homestead Dreams</Description>
+	<Contact>help@wordpress.com</Contact>
+	<Url type="application/atom+xml" template="https://anythingagriculture.com/?s={searchTerms}&amp;feed=atom" />
+	<Url type="rss+xml" template="https://anythingagriculture.com/?s={searchTerms}&amp;feed=rss2" />
+	<Url type="text/html" template="https://anythingagriculture.com/?s={searchTerms}" method="GET" />
+	<Url type="application/opensearchdescription+xml" rel="self" template="https://anythingagriculture.com/osd.xml" />
+	<LongName>Anything Agriculture</LongName>
+	<Image height="16" width="16" type="image/vnd.microsoft.icon">https://anythingagriculture.com/wp-content/uploads/2025/02/cropped-logo-from-canva-3.png?w=16</Image>
+	<Image height="64" width="64" type="image/png">https://anythingagriculture.com/wp-content/uploads/2025/02/cropped-logo-from-canva-3.png?w=64</Image>
+	<Query role="example" searchTerms="photography" />
+	<Tags>agriculture homesteading gardening horticulture garden soil rotational-grazing vegetables seeds plants</Tags>
+	<Developer>Automattic</Developer>
+	<SyndicationRight>open</SyndicationRight>
+	<AdultContent>false</AdultContent>
+	<Language>en</Language>
+	<OutputEncoding>UTF-8</OutputEncoding>
+	<InputEncoding>UTF-8</InputEncoding>
+	<moz:SearchForm>https://anythingagriculture.com</moz:SearchForm>
+</OpenSearchDescription>
