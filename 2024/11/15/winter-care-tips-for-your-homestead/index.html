@@ -1,0 +1,1815 @@
+<!doctype html>
+<html lang="en">
+
+<!-- Mirrored from anythingagriculture.com/2024/11/15/winter-care-tips-for-your-homestead/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 28 Mar 2025 14:13:05 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="profile" href="https://gmpg.org/xfn/11" />
+	<title>Winter Care Tips for Your Homestead &#8211; Anything Agriculture</title>
+<meta name='robots' content='max-image-preview:large' />
+<meta name="google-site-verification" content="37z4W33MJoi4GBiNAWThv9PE-SMekvl_ulfho5fgbRw" />
+
+<!-- Async WordPress.com Remote Login -->
+<script id="wpcom_remote_login_js">
+var wpcom_remote_login_extra_auth = '';
+function wpcom_remote_login_remove_dom_node_id( element_id ) {
+	var dom_node = document.getElementById( element_id );
+	if ( dom_node ) { dom_node.parentNode.removeChild( dom_node ); }
+}
+function wpcom_remote_login_remove_dom_node_classes( class_name ) {
+	var dom_nodes = document.querySelectorAll( '.' + class_name );
+	for ( var i = 0; i < dom_nodes.length; i++ ) {
+		dom_nodes[ i ].parentNode.removeChild( dom_nodes[ i ] );
+	}
+}
+function wpcom_remote_login_final_cleanup() {
+	wpcom_remote_login_remove_dom_node_classes( "wpcom_remote_login_msg" );
+	wpcom_remote_login_remove_dom_node_id( "wpcom_remote_login_key" );
+	wpcom_remote_login_remove_dom_node_id( "wpcom_remote_login_validate" );
+	wpcom_remote_login_remove_dom_node_id( "wpcom_remote_login_js" );
+	wpcom_remote_login_remove_dom_node_id( "wpcom_request_access_iframe" );
+	wpcom_remote_login_remove_dom_node_id( "wpcom_request_access_styles" );
+}
+
+// Watch for messages back from the remote login
+window.addEventListener( "message", function( e ) {
+	if ( e.origin === "https://r-login.wordpress.com/" ) {
+		var data = {};
+		try {
+			data = JSON.parse( e.data );
+		} catch( e ) {
+			wpcom_remote_login_final_cleanup();
+			return;
+		}
+
+		if ( data.msg === 'LOGIN' ) {
+			// Clean up the login check iframe
+			wpcom_remote_login_remove_dom_node_id( "wpcom_remote_login_key" );
+
+			var id_regex = new RegExp( /^[0-9]+$/ );
+			var token_regex = new RegExp( /^.*|.*|.*$/ );
+			if (
+				token_regex.test( data.token )
+				&& id_regex.test( data.wpcomid )
+			) {
+				// We have everything we need to ask for a login
+				var script = document.createElement( "script" );
+				script.setAttribute( "id", "wpcom_remote_login_validate" );
+				script.src = '../../../../remote-login4f98.html?wpcom_remote_login=validate'
+					+ '&wpcomid=' + data.wpcomid
+					+ '&token=' + encodeURIComponent( data.token )
+					+ '&host=' + window.location.protocol
+					+ '//' + window.location.hostname
+					+ '&postid=355'
+					+ '&is_singular=1';
+				document.body.appendChild( script );
+			}
+
+			return;
+		}
+
+		// Safari ITP, not logged in, so redirect
+		if ( data.msg === 'LOGIN-REDIRECT' ) {
+			window.location = 'https://wordpress.com/log-in?redirect_to=' + window.location.href;
+			return;
+		}
+
+		// Safari ITP, storage access failed, remove the request
+		if ( data.msg === 'LOGIN-REMOVE' ) {
+			var css_zap = 'html { -webkit-transition: margin-top 1s; transition: margin-top 1s; } /* 9001 */ html { margin-top: 0 !important; } * html body { margin-top: 0 !important; } @media screen and ( max-width: 782px ) { html { margin-top: 0 !important; } * html body { margin-top: 0 !important; } }';
+			var style_zap = document.createElement( 'style' );
+			style_zap.type = 'text/css';
+			style_zap.appendChild( document.createTextNode( css_zap ) );
+			document.body.appendChild( style_zap );
+
+			var e = document.getElementById( 'wpcom_request_access_iframe' );
+			e.parentNode.removeChild( e );
+
+			document.cookie = 'wordpress_com_login_access=denied; path=/; max-age=31536000';
+
+			return;
+		}
+
+		// Safari ITP
+		if ( data.msg === 'REQUEST_ACCESS' ) {
+			console.log( 'request access: safari' );
+
+			// Check ITP iframe enable/disable knob
+			if ( wpcom_remote_login_extra_auth !== 'safari_itp_iframe' ) {
+				return;
+			}
+
+			// If we are in a "private window" there is no ITP.
+			var private_window = false;
+			try {
+				var opendb = window.openDatabase( null, null, null, null );
+			} catch( e ) {
+				private_window = true;
+			}
+
+			if ( private_window ) {
+				console.log( 'private window' );
+				return;
+			}
+
+			var iframe = document.createElement( 'iframe' );
+			iframe.id = 'wpcom_request_access_iframe';
+			iframe.setAttribute( 'scrolling', 'no' );
+			iframe.setAttribute( 'sandbox', 'allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-top-navigation-by-user-activation' );
+			iframe.src = 'https://r-login.wordpress.com/remote-login.php?wpcom_remote_login=request_access&amp;origin=' + encodeURIComponent( data.origin ) + '&wpcomid=' + encodeURIComponent( data.wpcomid );
+
+			var css = 'html { -webkit-transition: margin-top 1s; transition: margin-top 1s; } /* 9001 */ html { margin-top: 46px !important; } * html body { margin-top: 46px !important; } @media screen and ( max-width: 660px ) { html { margin-top: 71px !important; } * html body { margin-top: 71px !important; } #wpcom_request_access_iframe { display: block; height: 71px !important; } } #wpcom_request_access_iframe { border: 0px; height: 46px; position: fixed; top: 0; left: 0; width: 100%; min-width: 100%; z-index: 99999; background: #23282d; } ';
+
+			var style = document.createElement( 'style' );
+			style.type = 'text/css';
+			style.id = 'wpcom_request_access_styles';
+			style.appendChild( document.createTextNode( css ) );
+			document.body.appendChild( style );
+
+			document.body.appendChild( iframe );
+		}
+
+		if ( data.msg === 'DONE' ) {
+			wpcom_remote_login_final_cleanup();
+		}
+	}
+}, false );
+
+// Inject the remote login iframe after the page has had a chance to load
+// more critical resources
+window.addEventListener( "DOMContentLoaded", function( e ) {
+	var iframe = document.createElement( "iframe" );
+	iframe.style.display = "none";
+	iframe.setAttribute( "scrolling", "no" );
+	iframe.setAttribute( "id", "wpcom_remote_login_key" );
+	iframe.src = "https://r-login.wordpress.com/remote-login.php"
+		+ "?wpcom_remote_login=key"
+		+ "&origin=aHR0cHM6Ly9hbnl0aGluZ2FncmljdWx0dXJlLmNvbQ%3D%3D"
+		+ "&wpcomid=236739157"
+		+ "&time=1743170425";
+	document.body.appendChild( iframe );
+}, false );
+</script>
+<link rel='dns-prefetch' href='http://s0.wp.com/' />
+<link rel='dns-prefetch' href='http://s2.wp.com/' />
+<link rel='dns-prefetch' href='http://s1.wp.com/' />
+<link rel='dns-prefetch' href='http://widgets.wp.com/' />
+<link rel='dns-prefetch' href='http://wordpress.com/' />
+<link rel='dns-prefetch' href='http://fonts-api.wp.com/' />
+<link rel="alternate" type="application/rss+xml" title="Anything Agriculture &raquo; Feed" href="../../../../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Anything Agriculture &raquo; Comments Feed" href="../../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Anything Agriculture &raquo; Winter Care Tips for Your&nbsp;Homestead Comments Feed" href="feed/index.html" />
+	<script type="text/javascript">
+		/* <![CDATA[ */
+		function addLoadEvent(func) {
+			var oldonload = window.onload;
+			if (typeof window.onload != 'function') {
+				window.onload = func;
+			} else {
+				window.onload = function () {
+					oldonload();
+					func();
+				}
+			}
+		}
+		/* ]]> */
+	</script>
+	<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s0.wp.com\/wp-content\/mu-plugins\/wpcom-smileys\/twemoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s0.wp.com\/wp-content\/mu-plugins\/wpcom-smileys\/twemoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/s0.wp.com\/wp-includes\/js\/wp-emoji-release.min.js?m=1743165756i&ver=6.8-alpha-59825"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\uddfa\ud83c\uddf3","\ud83c\uddfa\u200b\ud83c\uddf3")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!n(e,"\ud83d\udc26\u200d\u2b1b","\ud83d\udc26\u200b\u2b1b")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+<link crossorigin='anonymous' rel='stylesheet' id='all-css-0-1' href='https://s2.wp.com/_static/??-eJxtzFsKgCAQQNENZYMhRR/RWkSH8C3NSNuPIgiizwOXC0cVpmTGzJCaqLFtLhN45KpNeAzUMqRiW0SCHaNmtKIW4o96Q9TB/zG6gO/31pWvaZGTkvMoB6X8CSlgNHQ=&amp;cssminify=yes' type='text/css' media='all' />
+<style id='wp-emoji-styles-inline-css'>
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+</style>
+<link crossorigin='anonymous' rel='stylesheet' id='all-css-2-1' href='https://s0.wp.com/_static/??-eJyljkEKwjAQRS9kMm0ISBfiWZJ2iKlpEmYmSm5vdSO4Krj8PN7jw7OquWTBLFBTCzEzhLZPjxR2QggPM+hBW/AtpgV8KvNdpejJUQeWnlDPzCf4LyQ33I6EPhbDilLdW3e9NFGB4nL4y0+CnMQc+Ktft8t4tqOZJmPs+gJ1p2pO&amp;cssminify=yes' type='text/css' media='all' />
+<style id='wp-block-library-inline-css'>
+.has-text-align-justify {
+	text-align:justify;
+}
+.has-text-align-justify{text-align:justify;}
+</style>
+<link crossorigin='anonymous' rel='stylesheet' id='all-css-4-1' href='https://s2.wp.com/_static/??-eJzTLy/QzcxLzilNSS3WzyrWz01NyUxMzUnNTc0rQeEU5CRWphbp5qSmJyZX6uVm5uklFxfr6OPTDpRD5sM02efaGpoZmFkYGRuZGmQBAHPvL0Y=&amp;cssminify=yes' type='text/css' media='all' />
+<style id='jetpack-sharing-buttons-style-inline-css'>
+.jetpack-sharing-buttons__services-list{display:flex;flex-direction:row;flex-wrap:wrap;gap:0;list-style-type:none;margin:5px;padding:0}.jetpack-sharing-buttons__services-list.has-small-icon-size{font-size:12px}.jetpack-sharing-buttons__services-list.has-normal-icon-size{font-size:16px}.jetpack-sharing-buttons__services-list.has-large-icon-size{font-size:24px}.jetpack-sharing-buttons__services-list.has-huge-icon-size{font-size:36px}@media print{.jetpack-sharing-buttons__services-list{display:none!important}}.editor-styles-wrapper .wp-block-jetpack-sharing-buttons{gap:0;padding-inline-start:0}ul.jetpack-sharing-buttons__services-list.has-background{padding:1.25em 2.375em}
+</style>
+<style id='classic-theme-styles-inline-css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<link crossorigin='anonymous' rel='stylesheet' id='all-css-8-1' href='https://s1.wp.com/_static/??/wp-content/mu-plugins/core-compat/wp-mediaelement.css,/wp-content/mu-plugins/wpcom-bbpress-premium-themes.css?m=1432920480j&amp;cssminify=yes' type='text/css' media='all' />
+<style id='global-styles-inline-css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--primary: #c8133e;--wp--preset--color--secondary: #4e2f4b;--wp--preset--color--background: #ffffff;--wp--preset--color--foreground: #1d1e1e;--wp--preset--color--foreground-light: #1d1e1e;--wp--preset--color--foreground-dark: #1d1e1e;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 16px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 27px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--normal: 23px;--wp--preset--font-size--huge: 32px;--wp--preset--font-family--albert-sans: 'Albert Sans', sans-serif;--wp--preset--font-family--alegreya: Alegreya, serif;--wp--preset--font-family--arvo: Arvo, serif;--wp--preset--font-family--bodoni-moda: 'Bodoni Moda', serif;--wp--preset--font-family--bricolage-grotesque: 'Bricolage Grotesque', sans-serif;--wp--preset--font-family--cabin: Cabin, sans-serif;--wp--preset--font-family--chivo: Chivo, sans-serif;--wp--preset--font-family--commissioner: Commissioner, sans-serif;--wp--preset--font-family--cormorant: Cormorant, serif;--wp--preset--font-family--courier-prime: 'Courier Prime', monospace;--wp--preset--font-family--crimson-pro: 'Crimson Pro', serif;--wp--preset--font-family--dm-mono: 'DM Mono', monospace;--wp--preset--font-family--dm-sans: 'DM Sans', sans-serif;--wp--preset--font-family--dm-serif-display: 'DM Serif Display', serif;--wp--preset--font-family--domine: Domine, serif;--wp--preset--font-family--eb-garamond: 'EB Garamond', serif;--wp--preset--font-family--epilogue: Epilogue, sans-serif;--wp--preset--font-family--fahkwang: Fahkwang, sans-serif;--wp--preset--font-family--figtree: Figtree, sans-serif;--wp--preset--font-family--fira-sans: 'Fira Sans', sans-serif;--wp--preset--font-family--fjalla-one: 'Fjalla One', sans-serif;--wp--preset--font-family--fraunces: Fraunces, serif;--wp--preset--font-family--gabarito: Gabarito, system-ui;--wp--preset--font-family--ibm-plex-mono: 'IBM Plex Mono', monospace;--wp--preset--font-family--ibm-plex-sans: 'IBM Plex Sans', sans-serif;--wp--preset--font-family--ibarra-real-nova: 'Ibarra Real Nova', serif;--wp--preset--font-family--instrument-serif: 'Instrument Serif', serif;--wp--preset--font-family--inter: Inter, sans-serif;--wp--preset--font-family--josefin-sans: 'Josefin Sans', sans-serif;--wp--preset--font-family--jost: Jost, sans-serif;--wp--preset--font-family--libre-baskerville: 'Libre Baskerville', serif;--wp--preset--font-family--libre-franklin: 'Libre Franklin', sans-serif;--wp--preset--font-family--literata: Literata, serif;--wp--preset--font-family--lora: Lora, serif;--wp--preset--font-family--merriweather: Merriweather, serif;--wp--preset--font-family--montserrat: Montserrat, sans-serif;--wp--preset--font-family--newsreader: Newsreader, serif;--wp--preset--font-family--noto-sans-mono: 'Noto Sans Mono', sans-serif;--wp--preset--font-family--nunito: Nunito, sans-serif;--wp--preset--font-family--open-sans: 'Open Sans', sans-serif;--wp--preset--font-family--overpass: Overpass, sans-serif;--wp--preset--font-family--pt-serif: 'PT Serif', serif;--wp--preset--font-family--petrona: Petrona, serif;--wp--preset--font-family--piazzolla: Piazzolla, serif;--wp--preset--font-family--playfair-display: 'Playfair Display', serif;--wp--preset--font-family--plus-jakarta-sans: 'Plus Jakarta Sans', sans-serif;--wp--preset--font-family--poppins: Poppins, sans-serif;--wp--preset--font-family--raleway: Raleway, sans-serif;--wp--preset--font-family--roboto: Roboto, sans-serif;--wp--preset--font-family--roboto-slab: 'Roboto Slab', serif;--wp--preset--font-family--rubik: Rubik, sans-serif;--wp--preset--font-family--rufina: Rufina, serif;--wp--preset--font-family--sora: Sora, sans-serif;--wp--preset--font-family--source-sans-3: 'Source Sans 3', sans-serif;--wp--preset--font-family--source-serif-4: 'Source Serif 4', serif;--wp--preset--font-family--space-mono: 'Space Mono', monospace;--wp--preset--font-family--syne: Syne, sans-serif;--wp--preset--font-family--texturina: Texturina, serif;--wp--preset--font-family--urbanist: Urbanist, sans-serif;--wp--preset--font-family--work-sans: 'Work Sans', sans-serif;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:root :where(.is-layout-flow) > :first-child{margin-block-start: 0;}:root :where(.is-layout-flow) > :last-child{margin-block-end: 0;}:root :where(.is-layout-flow) > *{margin-block-start: 24px;margin-block-end: 0;}:root :where(.is-layout-constrained) > :first-child{margin-block-start: 0;}:root :where(.is-layout-constrained) > :last-child{margin-block-end: 0;}:root :where(.is-layout-constrained) > *{margin-block-start: 24px;margin-block-end: 0;}:root :where(.is-layout-flex){gap: 24px;}:root :where(.is-layout-grid){gap: 24px;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-primary-color{color: var(--wp--preset--color--primary) !important;}.has-secondary-color{color: var(--wp--preset--color--secondary) !important;}.has-background-color{color: var(--wp--preset--color--background) !important;}.has-foreground-color{color: var(--wp--preset--color--foreground) !important;}.has-foreground-light-color{color: var(--wp--preset--color--foreground-light) !important;}.has-foreground-dark-color{color: var(--wp--preset--color--foreground-dark) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-primary-background-color{background-color: var(--wp--preset--color--primary) !important;}.has-secondary-background-color{background-color: var(--wp--preset--color--secondary) !important;}.has-background-background-color{background-color: var(--wp--preset--color--background) !important;}.has-foreground-background-color{background-color: var(--wp--preset--color--foreground) !important;}.has-foreground-light-background-color{background-color: var(--wp--preset--color--foreground-light) !important;}.has-foreground-dark-background-color{background-color: var(--wp--preset--color--foreground-dark) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-primary-border-color{border-color: var(--wp--preset--color--primary) !important;}.has-secondary-border-color{border-color: var(--wp--preset--color--secondary) !important;}.has-background-border-color{border-color: var(--wp--preset--color--background) !important;}.has-foreground-border-color{border-color: var(--wp--preset--color--foreground) !important;}.has-foreground-light-border-color{border-color: var(--wp--preset--color--foreground-light) !important;}.has-foreground-dark-border-color{border-color: var(--wp--preset--color--foreground-dark) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}.has-normal-font-size{font-size: var(--wp--preset--font-size--normal) !important;}.has-huge-font-size{font-size: var(--wp--preset--font-size--huge) !important;}.has-albert-sans-font-family{font-family: var(--wp--preset--font-family--albert-sans) !important;}.has-alegreya-font-family{font-family: var(--wp--preset--font-family--alegreya) !important;}.has-arvo-font-family{font-family: var(--wp--preset--font-family--arvo) !important;}.has-bodoni-moda-font-family{font-family: var(--wp--preset--font-family--bodoni-moda) !important;}.has-bricolage-grotesque-font-family{font-family: var(--wp--preset--font-family--bricolage-grotesque) !important;}.has-cabin-font-family{font-family: var(--wp--preset--font-family--cabin) !important;}.has-chivo-font-family{font-family: var(--wp--preset--font-family--chivo) !important;}.has-commissioner-font-family{font-family: var(--wp--preset--font-family--commissioner) !important;}.has-cormorant-font-family{font-family: var(--wp--preset--font-family--cormorant) !important;}.has-courier-prime-font-family{font-family: var(--wp--preset--font-family--courier-prime) !important;}.has-crimson-pro-font-family{font-family: var(--wp--preset--font-family--crimson-pro) !important;}.has-dm-mono-font-family{font-family: var(--wp--preset--font-family--dm-mono) !important;}.has-dm-sans-font-family{font-family: var(--wp--preset--font-family--dm-sans) !important;}.has-dm-serif-display-font-family{font-family: var(--wp--preset--font-family--dm-serif-display) !important;}.has-domine-font-family{font-family: var(--wp--preset--font-family--domine) !important;}.has-eb-garamond-font-family{font-family: var(--wp--preset--font-family--eb-garamond) !important;}.has-epilogue-font-family{font-family: var(--wp--preset--font-family--epilogue) !important;}.has-fahkwang-font-family{font-family: var(--wp--preset--font-family--fahkwang) !important;}.has-figtree-font-family{font-family: var(--wp--preset--font-family--figtree) !important;}.has-fira-sans-font-family{font-family: var(--wp--preset--font-family--fira-sans) !important;}.has-fjalla-one-font-family{font-family: var(--wp--preset--font-family--fjalla-one) !important;}.has-fraunces-font-family{font-family: var(--wp--preset--font-family--fraunces) !important;}.has-gabarito-font-family{font-family: var(--wp--preset--font-family--gabarito) !important;}.has-ibm-plex-mono-font-family{font-family: var(--wp--preset--font-family--ibm-plex-mono) !important;}.has-ibm-plex-sans-font-family{font-family: var(--wp--preset--font-family--ibm-plex-sans) !important;}.has-ibarra-real-nova-font-family{font-family: var(--wp--preset--font-family--ibarra-real-nova) !important;}.has-instrument-serif-font-family{font-family: var(--wp--preset--font-family--instrument-serif) !important;}.has-inter-font-family{font-family: var(--wp--preset--font-family--inter) !important;}.has-josefin-sans-font-family{font-family: var(--wp--preset--font-family--josefin-sans) !important;}.has-jost-font-family{font-family: var(--wp--preset--font-family--jost) !important;}.has-libre-baskerville-font-family{font-family: var(--wp--preset--font-family--libre-baskerville) !important;}.has-libre-franklin-font-family{font-family: var(--wp--preset--font-family--libre-franklin) !important;}.has-literata-font-family{font-family: var(--wp--preset--font-family--literata) !important;}.has-lora-font-family{font-family: var(--wp--preset--font-family--lora) !important;}.has-merriweather-font-family{font-family: var(--wp--preset--font-family--merriweather) !important;}.has-montserrat-font-family{font-family: var(--wp--preset--font-family--montserrat) !important;}.has-newsreader-font-family{font-family: var(--wp--preset--font-family--newsreader) !important;}.has-noto-sans-mono-font-family{font-family: var(--wp--preset--font-family--noto-sans-mono) !important;}.has-nunito-font-family{font-family: var(--wp--preset--font-family--nunito) !important;}.has-open-sans-font-family{font-family: var(--wp--preset--font-family--open-sans) !important;}.has-overpass-font-family{font-family: var(--wp--preset--font-family--overpass) !important;}.has-pt-serif-font-family{font-family: var(--wp--preset--font-family--pt-serif) !important;}.has-petrona-font-family{font-family: var(--wp--preset--font-family--petrona) !important;}.has-piazzolla-font-family{font-family: var(--wp--preset--font-family--piazzolla) !important;}.has-playfair-display-font-family{font-family: var(--wp--preset--font-family--playfair-display) !important;}.has-plus-jakarta-sans-font-family{font-family: var(--wp--preset--font-family--plus-jakarta-sans) !important;}.has-poppins-font-family{font-family: var(--wp--preset--font-family--poppins) !important;}.has-raleway-font-family{font-family: var(--wp--preset--font-family--raleway) !important;}.has-roboto-font-family{font-family: var(--wp--preset--font-family--roboto) !important;}.has-roboto-slab-font-family{font-family: var(--wp--preset--font-family--roboto-slab) !important;}.has-rubik-font-family{font-family: var(--wp--preset--font-family--rubik) !important;}.has-rufina-font-family{font-family: var(--wp--preset--font-family--rufina) !important;}.has-sora-font-family{font-family: var(--wp--preset--font-family--sora) !important;}.has-source-sans-3-font-family{font-family: var(--wp--preset--font-family--source-sans-3) !important;}.has-source-serif-4-font-family{font-family: var(--wp--preset--font-family--source-serif-4) !important;}.has-space-mono-font-family{font-family: var(--wp--preset--font-family--space-mono) !important;}.has-syne-font-family{font-family: var(--wp--preset--font-family--syne) !important;}.has-texturina-font-family{font-family: var(--wp--preset--font-family--texturina) !important;}.has-urbanist-font-family{font-family: var(--wp--preset--font-family--urbanist) !important;}.has-work-sans-font-family{font-family: var(--wp--preset--font-family--work-sans) !important;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link crossorigin='anonymous' rel='stylesheet' id='all-css-10-1' href='https://s0.wp.com/wp-content/mu-plugins/jetpack-mu-wpcom-plugin/sun/jetpack_vendor/automattic/jetpack-mu-wpcom/src/build/verbum-comments/verbum-comments.css?m=1737671034i&amp;cssminify=yes' type='text/css' media='all' />
+<link rel='stylesheet' id='verbum-gutenberg-css-css' href='https://widgets.wp.com/verbum-block-editor/block-editor.css?ver=1738686361' media='all' />
+<link crossorigin='anonymous' rel='stylesheet' id='all-css-12-1' href='https://s1.wp.com/_static/??/wp-content/mu-plugins/comment-likes/css/comment-likes.css,/i/noticons/noticons.css?m=1436783281j&amp;cssminify=yes' type='text/css' media='all' />
+<link crossorigin='anonymous' rel='stylesheet' id='print-css-13-1' href='https://s1.wp.com/wp-content/themes/pub/varia/print.css?m=1738187798i&amp;cssminify=yes' type='text/css' media='print' />
+<link crossorigin='anonymous' rel='stylesheet' id='all-css-14-1' href='https://s0.wp.com/_static/??/wp-content/themes/pub/barnsbury/style.css,/wp-content/themes/pub/varia/inc/style-wpcom.css?m=1741797239j&amp;cssminify=yes' type='text/css' media='all' />
+<style id='akismet-widget-style-inline-css'>
+
+			.a-stats {
+				--akismet-color-mid-green: #357b49;
+				--akismet-color-white: #fff;
+				--akismet-color-light-grey: #f6f7f7;
+
+				max-width: 350px;
+				width: auto;
+			}
+
+			.a-stats * {
+				all: unset;
+				box-sizing: border-box;
+			}
+
+			.a-stats strong {
+				font-weight: 600;
+			}
+
+			.a-stats a.a-stats__link,
+			.a-stats a.a-stats__link:visited,
+			.a-stats a.a-stats__link:active {
+				background: var(--akismet-color-mid-green);
+				border: none;
+				box-shadow: none;
+				border-radius: 8px;
+				color: var(--akismet-color-white);
+				cursor: pointer;
+				display: block;
+				font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen-Sans', 'Ubuntu', 'Cantarell', 'Helvetica Neue', sans-serif;
+				font-weight: 500;
+				padding: 12px;
+				text-align: center;
+				text-decoration: none;
+				transition: all 0.2s ease;
+			}
+
+			/* Extra specificity to deal with TwentyTwentyOne focus style */
+			.widget .a-stats a.a-stats__link:focus {
+				background: var(--akismet-color-mid-green);
+				color: var(--akismet-color-white);
+				text-decoration: none;
+			}
+
+			.a-stats a.a-stats__link:hover {
+				filter: brightness(110%);
+				box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06), 0 0 2px rgba(0, 0, 0, 0.16);
+			}
+
+			.a-stats .count {
+				color: var(--akismet-color-white);
+				display: block;
+				font-size: 1.5em;
+				line-height: 1.4;
+				padding: 0 13px;
+				white-space: nowrap;
+			}
+		
+</style>
+<link crossorigin='anonymous' rel='stylesheet' id='all-css-16-1' href='https://s1.wp.com/_static/??-eJzTLy/QTc7PK0nNK9HPLdUtyClNz8wr1i9KTcrJTwcy0/WTi5G5ekCujj52Temp+bo5+cmJJZn5eSgc3bScxMwikFb7XFtDE1NLExMLc0OTLACohS2q&amp;cssminify=yes' type='text/css' media='all' />
+<link rel='stylesheet' id='barnsbury-fonts-css' href='https://fonts-api.wp.com/css?family=Rubik%3A400%2C700%2C400italic%2C700italic&amp;subset=latin%2Clatin-ext' media='all' />
+<link crossorigin='anonymous' rel='stylesheet' id='all-css-18-1' href='https://s2.wp.com/wp-content/themes/pub/barnsbury/style.css?m=1741797239i&amp;cssminify=yes' type='text/css' media='all' />
+<style id='jetpack-global-styles-frontend-style-inline-css'>
+:root { --font-headings: unset; --font-base: unset; --font-headings-default: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif; --font-base-default: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;}
+</style>
+<link crossorigin='anonymous' rel='stylesheet' id='all-css-20-1' href='https://s0.wp.com/_static/??-eJyNjcsKQjEMBX/ImlsQry7ET5GahrbXNCmmRfx7H7gRN+7OwGEGbs2hSifpUIdrPFIRg4V6C3j5MNgQqBoHk4HlcKUYYry/Z5G0RrMV/C06FUEwxRLYsSa1L/iR9Uz1mc0bSKznwK/DsR787Kd5P/ntbnkAuNBIYA==&amp;cssminify=yes' type='text/css' media='all' />
+<script type="text/javascript" id="jetpack_related-posts-js-extra">
+/* <![CDATA[ */
+var related_posts_js_options = {"post_heading":"h4"};
+/* ]]> */
+</script>
+<script type="text/javascript" id="wpcom-actionbar-placeholder-js-extra">
+/* <![CDATA[ */
+var actionbardata = {"siteID":"236739157","postID":"355","siteURL":"https:\/\/anythingagriculture.com","xhrURL":"https:\/\/anythingagriculture.com\/wp-admin\/admin-ajax.php","nonce":"389e473be9","isLoggedIn":"","statusMessage":"","subsEmailDefault":"instantly","proxyScriptUrl":"https:\/\/s0.wp.com\/wp-content\/js\/wpcom-proxy-request.js?ver=20211021","shortlink":"https:\/\/wp.me\/pg1kFv-5J","i18n":{"followedText":"New posts from this site will now appear in your <a href=\"https:\/\/wordpress.com\/reader\">Reader<\/a>","foldBar":"Collapse this bar","unfoldBar":"Expand this bar","shortLinkCopied":"Shortlink copied to clipboard."}};
+/* ]]> */
+</script>
+<script type="text/javascript" id="jetpack-mu-wpcom-settings-js-before">
+/* <![CDATA[ */
+var JETPACK_MU_WPCOM_SETTINGS = {"assetsUrl":"https:\/\/s1.wp.com\/wp-content\/mu-plugins\/jetpack-mu-wpcom-plugin\/sun\/jetpack_vendor\/automattic\/jetpack-mu-wpcom\/src\/build\/"};
+/* ]]> */
+</script>
+<script crossorigin='anonymous' type='text/javascript'  src='https://s1.wp.com/_static/??/wp-content/mu-plugins/jetpack-plugin/sun/_inc/build/related-posts/related-posts.min.js,/wp-content/js/rlt-proxy.js?m=1733765333j'></script>
+<script type="text/javascript" id="rlt-proxy-js-after">
+/* <![CDATA[ */
+	rltInitialize( {"token":null,"iframeOrigins":["https:\/\/widgets.wp.com"]} );
+/* ]]> */
+</script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://anythingagriculture.wordpress.com/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress.com" />
+<link rel="canonical" href="index.html" />
+<link rel='shortlink' href='https://wp.me/pg1kFv-5J' />
+<link rel="alternate" type="application/json+oembed" href="https://public-api.wordpress.com/oembed/?format=json&amp;url=https%3A%2F%2Fanythingagriculture.com%2F2024%2F11%2F15%2Fwinter-care-tips-for-your-homestead%2F&amp;for=wpcom-auto-discovery" /><link rel="alternate" type="application/xml+oembed" href="https://public-api.wordpress.com/oembed/?format=xml&amp;url=https%3A%2F%2Fanythingagriculture.com%2F2024%2F11%2F15%2Fwinter-care-tips-for-your-homestead%2F&amp;for=wpcom-auto-discovery" />
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Winter Care Tips for Your Homestead" />
+<meta property="og:url" content="https://anythingagriculture.com/2024/11/15/winter-care-tips-for-your-homestead/" />
+<meta property="article:published_time" content="2024-11-15T15:02:18+00:00" />
+<meta property="article:modified_time" content="2025-02-07T18:00:03+00:00" />
+<meta property="og:site_name" content="Anything Agriculture" />
+<meta property="og:image" content="https://anythingagriculture.com/wp-content/uploads/2024/11/barn-with-snow.jpg?w=1200" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="800" />
+<meta property="og:image:alt" content="" />
+<meta property="og:locale" content="en_US" />
+<meta property="article:publisher" content="https://www.facebook.com/WordPresscom" />
+<meta name="twitter:text:title" content="Winter Care Tips for Your&nbsp;Homestead" />
+<meta name="twitter:image" content="https://anythingagriculture.com/wp-content/uploads/2024/11/barn-with-snow.jpg?w=640" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="Visit the post for more." />
+
+<!-- End Jetpack Open Graph Tags -->
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../osd.xml" title="Anything Agriculture" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://s1.wp.com/opensearch.xml" title="WordPress.com" />
+<link rel="pingback" href="../../../../xmlrpc.php"><meta name="description" content="December Newsletter &nbsp;Winter is setting in. The weather has gotten colder. For many of us, there is still plenty to do, especially if you have animals. In this newsletter, you will get some timely information about the plants and animals in your care. There is still plenty of plant to take care of this season.&hellip;" />
+<style type="text/css" id="custom-colors-css">	@media screen and (min-width: 560px) {
+
+		.main-navigation > div > ul > li > .sub-menu {
+			background-color: #ffffff;
+			border: 1px solid;
+		}
+		.main-navigation > div > ul > li.current-menu-item li > a,
+		.main-navigation > div > ul > li.focus li > a,
+		.main-navigation > div > ul > li:hover li > a {
+			color: #ffffff;
+		}
+		.site-header .main-navigation > div > ul > li.current-menu-item > ul::before,
+		.site-header .main-navigation > div > ul > li.focus > ul::before,
+		.site-header .main-navigation > div > ul > li:hover > ul::before {
+			border: none;
+		}
+	}
+.has-background-background-color,
+			.has-background-background-color.has-background-dim,
+			.screen-reader-text:focus,
+			body,
+			body .widget_eu_cookie_law_widget #eu-cookie-law,
+			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept,
+			.main-navigation > div > ul > li > .sub-menu,
+			.main-navigation > div > ul > li.current-menu-item li > a,
+			.main-navigation > div > ul > li.focus li > a,
+			.main-navigation > div > ul > li:hover li > a,
+			.main-navigation > div > ul > li:hover li:hover > a,
+			.main-navigation > div > ul > li:hover li.focus > a,
+			.main-navigation > div > ul > li:hover li.current-menu-item > a,
+			.main-navigation > div > ul > li.focus li:hover > a,
+			.main-navigation > div > ul > li.focus li.focus > a,
+			.main-navigation > div > ul > li.focus li.current-menu-item > a,
+			.main-navigation > div > ul > li.current-menu-item li:hover > a,
+			.main-navigation > div > ul > li.current-menu-item li.focus > a,
+			.main-navigation > div > ul > li.current-menu-item li.current-menu-item > a,
+			.mobile-nav-side .site-header #site-navigation.main-navigation .woocommerce-menu-container,
+			.mobile-nav-side .site-header #site-navigation.main-navigation > div { background-color: #ffffff;}
+.a8c-posts-list-item__featured span,
+			.a8c-posts-list__view-all,
+			.a8c-posts-list__view-all:focus,
+			.a8c-posts-list__view-all:hover,
+			.button,
+			.button:focus,
+			.button:hover,
+			.has-background-color,
+			.has-background-dim,
+			.has-focus.a8c-posts-list__view-all,
+			.has-focus.button,
+			.has-focus.wp-block-button__link,
+			.has-focus.wp-block-file__button,
+			.sticky-post,
+			.wp-block-button__link,
+			.wp-block-button__link:focus,
+			.wp-block-button__link:hover,
+			.wp-block-file .wp-block-file__button,
+			.wp-block-file a.wp-block-file__button:active,
+			.wp-block-file a.wp-block-file__button:focus,
+			.wp-block-file a.wp-block-file__button:hover,
+			.wp-block-file a.wp-block-file__button:visited,
+			.wp-block-file__button,
+			.wp-block-file__button:focus,
+			.wp-block-file__button:hover,
+			.wp-block-pullquote.is-style-solid-color,
+			body .widget_eu_cookie_law_widget #eu-cookie-law input.accept,
+			body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:focus,
+			body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:hover,
+			body .widget_eu_cookie_law_widget #eu-cookie-law input.has-focus.accept,
+			body .widget_eu_cookie_law_widget #eu-cookie-law.negative,
+			.wp-block-search .wp-block-search__button,
+			button,
+			button.has-focus,
+			button:focus,
+			button:hover,
+			button[data-load-more-btn],
+			input.has-focus[type="submit"],
+			input:focus[type="submit"],
+			input:hover[type="submit"],
+			input[type="submit"] { color: #ffffff;}
+.has-primary-background-color,
+			.has-secondary-background-color,
+			.has-foreground-background-color,
+			.has-foreground-dark-background-color,
+			.has-foreground-light-background-color,
+			.has-background-color { color: #ffffff;}
+.has-background-background-color { background-color: #ffffff;}
+.has-background-dark-color { color: #E5E5E5;}
+.has-background-dark-background-color { background-color: #E5E5E5;}
+.has-background-light-color { color: #FFFFFF;}
+.has-background-light-background-color { background-color: #FFFFFF;}
+.main-navigation > div > ul > li > .sub-menu { border-color: #E5E5E5;}
+.a8c-posts-list-item__featured span,
+			.a8c-posts-list__view-all,
+			.button,
+			.sticky-post,
+			.wp-block-button__link,
+			.wp-block-file .wp-block-file__button,
+			.wp-block-file__button,
+			.wp-block-pullquote.is-style-solid-color,
+			body .widget_eu_cookie_law_widget #eu-cookie-law input.accept,
+			.wp-block-search .wp-block-search__button,
+			button,
+			button[data-load-more-btn],
+			input[type="submit"] { background-color: #c8133e;}
+.a8c-posts-list .a8c-posts-list-item__title a:active,
+			.a8c-posts-list .a8c-posts-list-item__title a:focus,
+			.a8c-posts-list .a8c-posts-list-item__title a:hover,
+			.entry-footer a:active,
+			.entry-footer a:hover,
+			.entry-meta a:active,
+			.entry-meta a:hover,
+			.entry-title a:active,
+			.entry-title a:focus,
+			.entry-title a:hover,
+			.footer-navigation .footer-menu,
+			.page-title a:active,
+			.page-title a:focus,
+			.page-title a:hover,
+			.site-info,
+			.social-navigation a:hover,
+			.wp-block-button.is-style-outline .wp-block-button__link,
+			.wp-block-button.is-style-outline .wp-block-button__link:active,
+			.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color),
+			.wp-block-button.is-style-outline .wp-block-button__link:hover,
+			.wp-block-button.is-style-outline .wp-block-button__link:focus,
+			.wp-block-button.is-style-outline .wp-block-button__link.has-focus,
+			.wp-block-button.is-style-outline.wp-block-button__link,
+			.wp-block-button.is-style-outline.wp-block-button__link:active,
+			.wp-block-button.is-style-outline.wp-block-button__link:not(.has-text-color),
+			.wp-block-button.is-style-outline.wp-block-button__link:hover,
+			.wp-block-button.is-style-outline.wp-block-button__link:focus,
+			.wp-block-button.is-style-outline.wp-block-button__link.has-focus,
+			.wp-block-latest-posts > li > a:active,
+			.wp-block-latest-posts > li > a:focus,
+			.wp-block-latest-posts > li > a:hover,
+			.wp-block-newspack-blocks-homepage-articles article .entry-title a,
+			.wp-block-newspack-blocks-homepage-articles article .entry-title a:active,
+			.wp-block-newspack-blocks-homepage-articles article .entry-title a:focus,
+			.wp-block-newspack-blocks-homepage-articles article .entry-title a:hover,
+			a,
+			.main-navigation > div > ul > li.current-menu-item > a,
+			.main-navigation > div > ul > li.focus > a,
+			.main-navigation > div > ul > li:hover > a,
+			.main-navigation > div > ul > li:hover li:hover > a,
+			.main-navigation > div > ul > li:hover li.focus > a,
+			.main-navigation > div > ul > li:hover li.current-menu-item > a,
+			.main-navigation > div > ul > li.focus li:hover > a,
+			.main-navigation > div > ul > li.focus li.focus > a,
+			.main-navigation > div > ul > li.focus li.current-menu-item > a,
+			.main-navigation > div > ul > li.current-menu-item li:hover > a,
+			.main-navigation > div > ul > li.current-menu-item li.focus > a,
+			.main-navigation > div > ul > li.current-menu-item li.current-menu-item > a { color: #c8133e;}
+.a8c-posts-list__item .a8c-posts-list-item__meta a:active,
+			.a8c-posts-list__item .a8c-posts-list-item__meta a:hover,
+			.comment-meta .comment-metadata a:active,
+			.comment-meta .comment-metadata a:hover,
+			.entry-footer a:active,
+			.entry-footer a:hover,
+			.entry-meta a:active,
+			.entry-meta a:hover,
+			.footer-navigation .footer-menu a:hover,
+			.main-navigation a:hover,
+			.site-info a:hover,
+			.site-title a:hover,
+			.social-navigation a:hover,
+			.wp-block-button.is-style-outline .wp-block-button__link.has-focus,
+			.wp-block-button.is-style-outline .wp-block-button__link:focus,
+			.wp-block-button.is-style-outline .wp-block-button__link:hover,
+			.wp-block-button.is-style-outline.wp-block-button__link.has-focus,
+			.wp-block-button.is-style-outline.wp-block-button__link:focus,
+			.wp-block-button.is-style-outline.wp-block-button__link:hover,
+			.wp-block-newspack-blocks-homepage-articles article .cat-links a:active,
+			.wp-block-newspack-blocks-homepage-articles article .cat-links a:hover,
+			.wp-block-newspack-blocks-homepage-articles article .entry-meta a:active,
+			.wp-block-newspack-blocks-homepage-articles article .entry-meta a:hover,
+			.wp-block-newspack-blocks-homepage-articles article .entry-title a:hover,
+			.wp-block-search .wp-block-search__button:focus,
+			.wp-block-search .wp-block-search__button:hover,
+			a:hover { color: #c8133e;}
+.a8c-posts-list__item .a8c-posts-list-item__meta a:active,
+			.a8c-posts-list__item .a8c-posts-list-item__meta a:hover,
+			.comment-meta .comment-metadata a:active,
+			.comment-meta .comment-metadata a:hover,
+			.entry-footer a:active,
+			.entry-footer a:hover,
+			.entry-meta a:active,
+			.entry-meta a:hover,
+			.footer-navigation .footer-menu a:hover,
+			.main-navigation a:hover,
+			.site-info a:hover,
+			.site-title a:hover,
+			.social-navigation a:hover,
+			.wp-block-button.is-style-outline .wp-block-button__link.has-focus,
+			.wp-block-button.is-style-outline .wp-block-button__link:focus,
+			.wp-block-button.is-style-outline .wp-block-button__link:hover,
+			.wp-block-button.is-style-outline.wp-block-button__link.has-focus,
+			.wp-block-button.is-style-outline.wp-block-button__link:focus,
+			.wp-block-button.is-style-outline.wp-block-button__link:hover,
+			.wp-block-newspack-blocks-homepage-articles article .cat-links a:active,
+			.wp-block-newspack-blocks-homepage-articles article .cat-links a:hover,
+			.wp-block-newspack-blocks-homepage-articles article .entry-meta a:active,
+			.wp-block-newspack-blocks-homepage-articles article .entry-meta a:hover,
+			.wp-block-newspack-blocks-homepage-articles article .entry-title a:hover,
+			.wp-block-search .wp-block-search__button:focus,
+			.wp-block-search .wp-block-search__button:hover,
+			a:hover { color: rgba( 200, 19, 62, 0.8 );}
+.wp-block-quote { border-left-color: #c8133e;}
+.wp-block-quote[style*="text-align: right"],
+			.wp-block-quote[style*="text-align:right"] { border-right-color: #c8133e;}
+.main-navigation > div > ul > li.current-menu-item > ul:before,
+			.main-navigation > div > ul > li.focus > ul:before,
+			.main-navigation > div > ul > li:hover > ul:before { border-bottom-color: #c8133e;}
+.has-primary-background-color { background-color: #c8133e;}
+.has-primary-color { color: #c8133e;}
+.comment-meta .comment-metadata,
+			.entry-footer,
+			.entry-meta,
+			.main-navigation,
+			.main-navigation a,
+			.main-navigation a:link,
+			.main-navigation a:visited,
+			.screen-reader-text:focus,
+			.social-navigation a,
+			.wp-block-code,
+			.wp-block-code pre,
+			.wp-block-latest-posts > li > a,
+			.wp-block-pullquote,
+			.wp-block-table.is-style-stripes tbody tr:nth-child(odd),
+			table.is-style-stripes tbody tr:nth-child(odd),
+			body,
+			body .widget_eu_cookie_law_widget #eu-cookie-law,
+			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept,
+			hr.wp-block-separator.is-style-dots:before,
+			.site-title,
+			.main-navigation > div > ul > li.current-menu-item li > a,
+			.main-navigation > div > ul > li.focus li > a,
+			.main-navigation > div > ul > li:hover li > a { color: #1d1e1e;}
+body .widget_eu_cookie_law_widget #eu-cookie-law.negative { background-color: #1d1e1e;}
+.wp-block-code,
+			body .widget_eu_cookie_law_widget #eu-cookie-law,
+			body .widget_eu_cookie_law_widget #eu-cookie-law.negative { border-color: #1d1e1e;}
+.comment-list .children > li,
+			.comment-list > li,
+			.wp-block-pullquote { border-top-color: #1d1e1e;}
+.comment-list,
+			.wp-block-pullquote,
+			hr,
+			hr.wp-block-separator { border-bottom-color: #1d1e1e;}
+.wp-block-search .wp-block-search__input { border-color: #1d1e1e;}
+.wp-block-search .wp-block-search__input { border-color: rgba( 29, 30, 30, 0.8 );}
+.has-foreground-color,
+			.has-background-background-color[class],
+			.has-background-background-color.has-background-dim,
+			.has-background-dark-background-color[class],
+			.has-background-dark-background-color.has-background-dim,
+			.has-background-light-background-color[class],
+			.has-background-light-background-color.has-background-dim { color: #1d1e1e;}
+.has-background-dim,
+			.has-foreground-background-color[class],
+			.has-foreground-background-color.has-background-dim { background-color: #1d1e1e;}
+.has-foreground-dark-color[class] { color: #040505;}
+.has-foreground-dark-background-color[class] { background-color: #040505;}
+.has-foreground-light-color[class] { color: #4F5353;}
+.has-foreground-light-background-color[class] { background-color: #4F5353;}
+ { color: #1d1e1e;}
+.wp-block-button.is-style-outline .wp-block-button__link:focus,
+			.wp-block-button.is-style-outline .wp-block-button__link:hover { color: #4e2f4b;}
+.wp-block-button:not(.is-style-outline) .wp-block-button__link:focus,
+			.wp-block-button:not(.is-style-outline) .wp-block-button__link:hover { background-color: #4e2f4b;}
+.has-secondary-color { color: #4e2f4b;}
+
+			.main-navigation .button:focus,
+			.main-navigation .button:hover,
+			.main-navigation #toggle:focus + #toggle-menu,
+			.has-secondary-background-color,
+			.has-secondary-background-color.has-background-dim { background-color: #4e2f4b;}
+</style>
+<link rel="icon" href="../../../../wp-content/uploads/2025/02/cropped-logo-from-canva-376ca.png?w=32" sizes="32x32" />
+<link rel="icon" href="../../../../wp-content/uploads/2025/02/cropped-logo-from-canva-39939.png?w=192" sizes="192x192" />
+<link rel="apple-touch-icon" href="../../../../wp-content/uploads/2025/02/cropped-logo-from-canva-3ad83.png?w=180" />
+<meta name="msapplication-TileImage" content="https://anythingagriculture.com/wp-content/uploads/2025/02/cropped-logo-from-canva-3.png?w=270" />
+</head>
+
+<body class="wp-singular post-template-default single single-post postid-355 single-format-standard wp-custom-logo wp-embed-responsive wp-theme-pubvaria wp-child-theme-pubbarnsbury customizer-styles-applied singular image-filters-enabled hide-homepage-title mobile-nav-side jetpack-reblog-enabled custom-colors">
+
+
+<div id="page" class="site">
+	<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+	
+<header id="masthead" class="site-header responsive-max-width has-logo has-title-and-tagline" role="banner">
+	
+	<div class="site-logo"><a href="../../../../index.html" class="custom-logo-link" rel="home"><img width="750" height="558" src="../../../../wp-content/uploads/2025/01/logo-from-canva-3.png" class="custom-logo" alt="Anything Agriculture" decoding="async" srcset="https://anythingagriculture.com/wp-content/uploads/2025/01/logo-from-canva-3.png?w=750&amp;h=558 750w, https://anythingagriculture.com/wp-content/uploads/2025/01/logo-from-canva-3.png?w=150&amp;h=112 150w, https://anythingagriculture.com/wp-content/uploads/2025/01/logo-from-canva-3.png?w=300&amp;h=223 300w, https://anythingagriculture.com/wp-content/uploads/2025/01/logo-from-canva-3.png?w=768&amp;h=571 768w, https://anythingagriculture.com/wp-content/uploads/2025/01/logo-from-canva-3.png?w=1024&amp;h=761 1024w, https://anythingagriculture.com/wp-content/uploads/2025/01/logo-from-canva-3.png 1256w" sizes="(max-width: 750px) 100vw, 750px" data-attachment-id="1203" data-permalink="https://anythingagriculture.com/home/logo-from-canva-5/" data-orig-file="https://anythingagriculture.com/wp-content/uploads/2025/01/logo-from-canva-3.png" data-orig-size="1256,934" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="logo from canva" data-image-description="" data-image-caption="" data-medium-file="https://anythingagriculture.com/wp-content/uploads/2025/01/logo-from-canva-3.png?w=300" data-large-file="https://anythingagriculture.com/wp-content/uploads/2025/01/logo-from-canva-3.png?w=750" /></a></div>
+
+			<p class="site-title"><a href="../../../../index.html" rel="home">Anything Agriculture</a></p>
+	
+		<p class="site-description">
+			Empowering Your Homestead Dreams		</p>
+		</header><!-- #masthead -->
+
+	<div id="content" class="site-content">
+
+	<section id="primary" class="content-area">
+		<main id="main" class="site-main">
+
+			
+<article id="post-355" class="post-355 post type-post status-publish format-standard has-post-thumbnail hentry category-newsletters tag-animal-in-winter tag-bucket tag-christmas-tree-2 tag-compost-pile tag-electric-heaters tag-evergreen tag-farm-animals tag-flowers tag-forced-bulb tag-freeze-miser tag-fresh-greenery tag-frost-heave tag-frozen-water tag-garden tag-gardening tag-gardening-tips tag-holly tag-horticulture tag-livestock tag-mulch tag-plants tag-propane-heater tag-salt-spray tag-sodium-cholorde tag-soil tag-winter-homestead tag-yard-work entry">
+
+	<header class="entry-header responsive-max-width">
+		<h1 class="entry-title">Winter Care Tips for Your&nbsp;Homestead</h1>				<div class="entry-meta">
+			<span class="byline"><svg class="svg-icon" width="16" height="16" aria-hidden="true" role="img" focusable="false" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg><span class="screen-reader-text">Posted by</span><span class="author vcard"><a class="url fn n" href="../../../../author/anythingagriculture/index.html">Ann Delchambre</a></span></span><span class="posted-on"><svg class="svg-icon" width="16" height="16" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><defs><path id="a" d="M0 0h24v24H0V0z"></path></defs><clipPath id="b"><use xlink:href="#a" overflow="visible"></use></clipPath><path clip-path="url(#b)" d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z"></path></svg><a href="index.html" rel="bookmark"><time class="entry-date published" datetime="2024-11-15T10:02:18-05:00">November 15, 2024</time><time class="updated" datetime="2025-02-07T13:00:03-05:00">February 7, 2025</time></a></span><span class="cat-links"><svg class="svg-icon" width="16" height="16" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg><span class="screen-reader-text">Posted in</span><a href="../../../../category/newsletters/index.html" rel="category tag">Newsletters</a></span><span class="tags-links"><svg class="svg-icon" width="16" height="16" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg><span class="screen-reader-text">Tags:</span><a href="../../../../tag/animal-in-winter/index.html" rel="tag">Animal in winter</a>, <a href="../../../../tag/bucket/index.html" rel="tag">Bucket</a>, <a href="../../../../tag/christmas-tree-2/index.html" rel="tag">Christmas Tree</a>, <a href="../../../../tag/compost-pile/index.html" rel="tag">Compost Pile</a>, <a href="../../../../tag/electric-heaters/index.html" rel="tag">Electric Heaters</a>, <a href="../../../../tag/evergreen/index.html" rel="tag">evergreen</a>, <a href="../../../../tag/farm-animals/index.html" rel="tag">Farm animals</a>, <a href="../../../../tag/flowers/index.html" rel="tag">flowers</a>, <a href="../../../../tag/forced-bulb/index.html" rel="tag">Forced Bulb</a>, <a href="../../../../tag/freeze-miser/index.html" rel="tag">Freeze miser</a>, <a href="../../../../tag/fresh-greenery/index.html" rel="tag">Fresh greenery</a>, <a href="../../../../tag/frost-heave/index.html" rel="tag">Frost heave</a>, <a href="../../../../tag/frozen-water/index.html" rel="tag">Frozen water</a>, <a href="../../../../tag/garden/index.html" rel="tag">garden</a>, <a href="../../../../tag/gardening/index.html" rel="tag">Gardening</a>, <a href="../../../../tag/gardening-tips/index.html" rel="tag">gardening-tips</a>, <a href="../../../../tag/holly/index.html" rel="tag">Holly</a>, <a href="../../../../tag/horticulture/index.html" rel="tag">Horticulture</a>, <a href="../../../../tag/livestock/index.html" rel="tag">Livestock</a>, <a href="../../../../tag/mulch/index.html" rel="tag">mulch</a>, <a href="../../../../tag/plants/index.html" rel="tag">Plants</a>, <a href="../../../../tag/propane-heater/index.html" rel="tag">Propane Heater</a>, <a href="../../../../tag/salt-spray/index.html" rel="tag">Salt spray</a>, <a href="../../../../tag/sodium-cholorde/index.html" rel="tag">Sodium Cholorde</a>, <a href="../../../../tag/soil/index.html" rel="tag">Soil</a>, <a href="../../../../tag/winter-homestead/index.html" rel="tag">Winter homestead</a>, <a href="../../../../tag/yard-work/index.html" rel="tag">Yard work</a></span>		</div><!-- .meta-info -->
+			</header>
+
+	
+			<figure class="post-thumbnail">
+				<img width="1568" height="1045" src="../../../../wp-content/uploads/2024/11/barn-with-snowc7e0.jpg?w=1568" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" decoding="async" srcset="https://anythingagriculture.com/wp-content/uploads/2024/11/barn-with-snow.jpg?w=1568 1568w, https://anythingagriculture.com/wp-content/uploads/2024/11/barn-with-snow.jpg?w=150 150w, https://anythingagriculture.com/wp-content/uploads/2024/11/barn-with-snow.jpg?w=300 300w, https://anythingagriculture.com/wp-content/uploads/2024/11/barn-with-snow.jpg?w=768 768w, https://anythingagriculture.com/wp-content/uploads/2024/11/barn-with-snow.jpg?w=1024 1024w, https://anythingagriculture.com/wp-content/uploads/2024/11/barn-with-snow.jpg 1920w" sizes="(max-width: 1568px) 100vw, 1568px" data-attachment-id="495" data-permalink="https://anythingagriculture.com/2024/11/15/winter-care-tips-for-your-homestead/barn-with-snow/" data-orig-file="https://anythingagriculture.com/wp-content/uploads/2024/11/barn-with-snow.jpg" data-orig-size="1920,1280" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Barn with snow" data-image-description="" data-image-caption="" data-medium-file="https://anythingagriculture.com/wp-content/uploads/2024/11/barn-with-snow.jpg?w=300" data-large-file="https://anythingagriculture.com/wp-content/uploads/2024/11/barn-with-snow.jpg?w=750" />			</figure><!-- .post-thumbnail -->
+
+		
+	<div class="entry-content">
+		
+<h2 class="wp-block-heading">December Newsletter</h2>
+
+
+<div class="wp-block-image">
+<figure class="alignright size-large"><img data-attachment-id="497" data-permalink="https://anythingagriculture.com/2024/11/15/winter-care-tips-for-your-homestead/barn-and-snow/" data-orig-file="https://anythingagriculture.com/wp-content/uploads/2024/11/barn-and-snow.jpg" data-orig-size="1920,1280" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Barn and snow" data-image-description="" data-image-caption="" data-medium-file="https://anythingagriculture.com/wp-content/uploads/2024/11/barn-and-snow.jpg?w=300" data-large-file="https://anythingagriculture.com/wp-content/uploads/2024/11/barn-and-snow.jpg?w=750" width="1024" height="682" src="../../../../wp-content/uploads/2024/11/barn-and-snow2dff.jpg?w=1024" alt="" class="wp-image-497" srcset="https://anythingagriculture.com/wp-content/uploads/2024/11/barn-and-snow.jpg?w=1024 1024w, https://anythingagriculture.com/wp-content/uploads/2024/11/barn-and-snow.jpg?w=150 150w, https://anythingagriculture.com/wp-content/uploads/2024/11/barn-and-snow.jpg?w=300 300w, https://anythingagriculture.com/wp-content/uploads/2024/11/barn-and-snow.jpg?w=768 768w, https://anythingagriculture.com/wp-content/uploads/2024/11/barn-and-snow.jpg 1920w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure></div>
+
+
+<p></p>
+
+
+
+<p>&nbsp;Winter is setting in. The weather has gotten colder. For many of us, there is still plenty to do, especially if you have animals. In this newsletter, you will get some timely information about the plants and animals in your care.   There is still plenty of plant to take care of this season. Christmas trees, holly, Christmas cactus, amaryllis and cyclamen all have a special place during the holidays. Still a lot to do on the homestead too. Don&#8217;t forget to protect your trees and shrubs from salt and heavy snow.  Take care of your animal&#8217;s needs by exploring all the different ways to keep water from freezing.</p>
+
+
+
+<p></p>
+
+
+
+<p><strong>Christmas Trees</strong></p>
+
+
+<div class="wp-block-image">
+<figure class="alignleft size-large is-resized"><img data-attachment-id="499" data-permalink="https://anythingagriculture.com/2024/11/15/winter-care-tips-for-your-homestead/christmas-tree/" data-orig-file="https://anythingagriculture.com/wp-content/uploads/2024/11/christmas-tree.jpg" data-orig-size="1280,1920" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Christmas tree" data-image-description="" data-image-caption="" data-medium-file="https://anythingagriculture.com/wp-content/uploads/2024/11/christmas-tree.jpg?w=200" data-large-file="https://anythingagriculture.com/wp-content/uploads/2024/11/christmas-tree.jpg?w=683" width="683" height="1024" src="../../../../wp-content/uploads/2024/11/christmas-treeb3cd.jpg?w=683" alt="" class="wp-image-499" style="width:419px;height:auto" srcset="https://anythingagriculture.com/wp-content/uploads/2024/11/christmas-tree.jpg?w=683 683w, https://anythingagriculture.com/wp-content/uploads/2024/11/christmas-tree.jpg?w=100 100w, https://anythingagriculture.com/wp-content/uploads/2024/11/christmas-tree.jpg?w=200 200w, https://anythingagriculture.com/wp-content/uploads/2024/11/christmas-tree.jpg?w=768 768w, https://anythingagriculture.com/wp-content/uploads/2024/11/christmas-tree.jpg 1280w" sizes="(max-width: 683px) 100vw, 683px" /></figure></div>
+
+
+<p>&nbsp; Keeping your fresh Christmas tree safe by making sure you are watering enough.&nbsp; A cut Christmas tree can go through a quart of water for every inch in diameter. For example, a 7-foot tree with a 3–4-inch trunk can use 3-4 quarts of water a day. That&#8217;s around a gallon! I have a whole blog post that just came out on Christmas trees and their care. Take a look at last week&#8217;s blog post on Christmas trees. <a href="../../08/why-choose-a-real-christmas-tree-this-holiday/index.html">Why-choose-a-real-christmas-tree-this-holiday/</a></p>
+
+
+
+<p></p>
+
+
+
+<p></p>
+
+
+
+<p></p>
+
+
+
+<p><strong>Fresh Greenery</strong></p>
+
+
+
+<p>Now is a great time to trim evergreens for fresh holiday greenery.&nbsp; Spruce, pine and hollies make great holiday greenery because it smells great and is biodegradable. &nbsp; Winter is a perfect season to trim evergreens. There is less insects and diseases in winter, so the plants have time to heal. </p>
+
+
+
+<p><strong>Holly</strong></p>
+
+
+<div class="wp-block-image">
+<figure class="alignright size-large"><img data-attachment-id="498" data-permalink="https://anythingagriculture.com/2024/11/15/winter-care-tips-for-your-homestead/holly/" data-orig-file="https://anythingagriculture.com/wp-content/uploads/2024/11/holly.jpg" data-orig-size="1920,1280" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="holly" data-image-description="" data-image-caption="" data-medium-file="https://anythingagriculture.com/wp-content/uploads/2024/11/holly.jpg?w=300" data-large-file="https://anythingagriculture.com/wp-content/uploads/2024/11/holly.jpg?w=750" loading="lazy" width="1024" height="682" src="../../../../wp-content/uploads/2024/11/holly2dff.jpg?w=1024" alt="" class="wp-image-498" srcset="https://anythingagriculture.com/wp-content/uploads/2024/11/holly.jpg?w=1024 1024w, https://anythingagriculture.com/wp-content/uploads/2024/11/holly.jpg?w=150 150w, https://anythingagriculture.com/wp-content/uploads/2024/11/holly.jpg?w=300 300w, https://anythingagriculture.com/wp-content/uploads/2024/11/holly.jpg?w=768 768w, https://anythingagriculture.com/wp-content/uploads/2024/11/holly.jpg 1920w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure></div>
+
+
+<p>Holly greenery is always popular for the holidays.&nbsp; The red berries and glossy leaves make this a particularly beautiful plant for your holidays.&nbsp; If you don&#8217;t have any red berries, you may have a male plant. You need to plant a female plant to get those berries.&nbsp; When trimming for greenery, put the ends in water until they are needed.&nbsp;</p>
+
+
+
+<p><strong>Caring for Other Christmas Plants like Amaryllis and Cyclamen&nbsp;</strong></p>
+
+
+
+<p>For anyone who loves plants, amaryllis bulbs and cyclamen are a wonderful gift. Giving something that is green and blooming can lift the spirit of any scrooge. These plants have become popular to have during the holiday season as alternative to poinsettias.&nbsp;&nbsp;</p>
+
+
+<div class="wp-block-image">
+<figure class="alignleft size-large"><img data-attachment-id="501" data-permalink="https://anythingagriculture.com/2024/11/15/winter-care-tips-for-your-homestead/amyrillus/" data-orig-file="https://anythingagriculture.com/wp-content/uploads/2024/11/amyrillus.jpg" data-orig-size="1920,1280" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="amyrillus" data-image-description="" data-image-caption="" data-medium-file="https://anythingagriculture.com/wp-content/uploads/2024/11/amyrillus.jpg?w=300" data-large-file="https://anythingagriculture.com/wp-content/uploads/2024/11/amyrillus.jpg?w=750" loading="lazy" width="1024" height="682" src="../../../../wp-content/uploads/2024/11/amyrillus2dff.jpg?w=1024" alt="" class="wp-image-501" srcset="https://anythingagriculture.com/wp-content/uploads/2024/11/amyrillus.jpg?w=1024 1024w, https://anythingagriculture.com/wp-content/uploads/2024/11/amyrillus.jpg?w=150 150w, https://anythingagriculture.com/wp-content/uploads/2024/11/amyrillus.jpg?w=300 300w, https://anythingagriculture.com/wp-content/uploads/2024/11/amyrillus.jpg?w=768 768w, https://anythingagriculture.com/wp-content/uploads/2024/11/amyrillus.jpg 1920w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure></div>
+
+
+<p>Amaryllis bulbs grow tall with large blooms. They are a really gorgeous plant to have as a centerpiece for the holidays. They seem to grow with little care. If you have Amaryllis from last year, it should start growing for the next bloom cycle. After the flower is spent make sure the flower is completely yellowed, then cut the stalk. Make sure it is in a sunny place. This ensures the leaves can still get enough sun. The bulb needs to store enough nutrients to bloom again. Be aware that amaryllis is toxic to cats and dogs</p>
+
+
+<div class="wp-block-image">
+<figure class="alignright size-large is-resized"><img data-attachment-id="502" data-permalink="https://anythingagriculture.com/2024/11/15/winter-care-tips-for-your-homestead/cyclomen-plant/" data-orig-file="https://anythingagriculture.com/wp-content/uploads/2024/11/cyclomen-plant.jpg" data-orig-size="1280,1920" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="cyclomen plant" data-image-description="" data-image-caption="" data-medium-file="https://anythingagriculture.com/wp-content/uploads/2024/11/cyclomen-plant.jpg?w=200" data-large-file="https://anythingagriculture.com/wp-content/uploads/2024/11/cyclomen-plant.jpg?w=683" loading="lazy" width="683" height="1024" src="../../../../wp-content/uploads/2024/11/cyclomen-plantb3cd.jpg?w=683" alt="" class="wp-image-502" style="width:346px;height:auto" srcset="https://anythingagriculture.com/wp-content/uploads/2024/11/cyclomen-plant.jpg?w=683 683w, https://anythingagriculture.com/wp-content/uploads/2024/11/cyclomen-plant.jpg?w=100 100w, https://anythingagriculture.com/wp-content/uploads/2024/11/cyclomen-plant.jpg?w=200 200w, https://anythingagriculture.com/wp-content/uploads/2024/11/cyclomen-plant.jpg?w=768 768w, https://anythingagriculture.com/wp-content/uploads/2024/11/cyclomen-plant.jpg 1280w" sizes="(max-width: 683px) 100vw, 683px" /></figure></div>
+
+
+<p>Cyclamens have such beautiful lasting color when the winter can be very dull and gray. Cyclamen plants prefer cool temps to bloom and grow. Temperatures between 60-65 Degrees F. &nbsp; They require indirect sunlight to bloom.&nbsp; This plant is a tender perennial and goes dormant during the summer. It is commonly grown as a houseplant and the unique foliage is enjoyed until it goes dormant.&nbsp; Cyclamen is toxic to pets so keep your plant protected.&nbsp;</p>
+
+
+
+<p><strong>Christmas Cactus</strong></p>
+
+
+
+<p>Reblooming Christmas and Thanksgiving Cacti Christmas Cactus and Thanksgiving Cactus  are popular flowering holiday plants.  Christmas cactus normally has smooth stem segments.&nbsp;Thanksgiving Cactus has hook-like appendages on each segment.  </p>
+
+
+
+<p>Flowering will not occur unless induced by temperature and/or light treatment. If the temperature is held at 50 to 55 degrees F, flowering will occur regardless of day length. But flowering usually is not uniform. Temperatures below 50 degrees F prevent flowering. Nights greater than 12 hours long and temperatures between 59 and 69 degrees also can generate flowers. Twenty-five consecutive long nights is enough for flower initiation. It takes an additional nine to 10 weeks for flowers to complete development and bloom.</p>
+
+
+<div class="wp-block-image">
+<figure class="alignleft size-large is-resized"><img data-attachment-id="561" data-permalink="https://anythingagriculture.com/2024/11/15/winter-care-tips-for-your-homestead/xmas-cactus/" data-orig-file="https://anythingagriculture.com/wp-content/uploads/2024/11/xmas-cactus.jpg" data-orig-size="1920,1421" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="xmas cactus" data-image-description="" data-image-caption="" data-medium-file="https://anythingagriculture.com/wp-content/uploads/2024/11/xmas-cactus.jpg?w=300" data-large-file="https://anythingagriculture.com/wp-content/uploads/2024/11/xmas-cactus.jpg?w=750" loading="lazy" width="1024" height="757" src="../../../../wp-content/uploads/2024/11/xmas-cactus2dff.jpg?w=1024" alt="" class="wp-image-561" style="width:421px;height:auto" srcset="https://anythingagriculture.com/wp-content/uploads/2024/11/xmas-cactus.jpg?w=1024 1024w, https://anythingagriculture.com/wp-content/uploads/2024/11/xmas-cactus.jpg?w=150 150w, https://anythingagriculture.com/wp-content/uploads/2024/11/xmas-cactus.jpg?w=300 300w, https://anythingagriculture.com/wp-content/uploads/2024/11/xmas-cactus.jpg?w=768 768w, https://anythingagriculture.com/wp-content/uploads/2024/11/xmas-cactus.jpg 1920w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure></div>
+
+
+<p>Both of these cacti like bright indirect light. Too much sun may cause leaves to turn yellow. Common household temperatures are fine. Keep soil constantly moist but not waterlogged. These plants seem to flower best if kept a little pot bound. If you need to repot you cactus, wait until spring.</p>
+
+
+
+<p></p>
+
+
+
+<p><strong>House Plants</strong></p>
+
+
+
+<p>House plants that you brought in from outside should be getting used to being inside.&nbsp; Make sure they are not getting over watered as their growth will slow down in the winter months</p>
+
+
+
+<p>&nbsp;Check for brown or dry edges. This indicates that the plant would do well with some more humidity.&nbsp; This can be done with a cold mist humidifier, pebble trays or grouping plants together.&nbsp;&nbsp;</p>
+
+
+
+<p>Houseplants in this time of year may not get enough light because the days are short and gray.&nbsp; Keep the plant away from cold windows as the foliage may die. &nbsp; Adding a supplemental light source until the days start getting longer will help the plants maintain their foliage</p>
+
+
+
+<p><strong>Forcing Bulbs</strong></p>
+
+
+
+<p>Remember the bulbs you put in the refrigerator last month? This month is great for forcing bulbs and getting that amazing pop of color in the winter.&nbsp; If you forgot to get your bulbs in the cooler, buy pre-chilled bulbs. Forced bulbs make a great gift to give other gardeners or anyone who misses being outdoors when it&#8217;s cold. &nbsp; The bulbs needs to be planted in moist soils and put in a warm bright place. They should bloom in 2-4 weeks depending on variety.&nbsp;</p>
+
+
+
+<figure class="wp-block-image alignwide size-large"><img data-attachment-id="504" data-permalink="https://anythingagriculture.com/2024/11/15/winter-care-tips-for-your-homestead/flower-bulb/" data-orig-file="https://anythingagriculture.com/wp-content/uploads/2024/11/flower-bulb.jpg" data-orig-size="1920,1078" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="flower-bulb" data-image-description="" data-image-caption="" data-medium-file="https://anythingagriculture.com/wp-content/uploads/2024/11/flower-bulb.jpg?w=300" data-large-file="https://anythingagriculture.com/wp-content/uploads/2024/11/flower-bulb.jpg?w=750" loading="lazy" width="1024" height="574" src="../../../../wp-content/uploads/2024/11/flower-bulb2dff.jpg?w=1024" alt="" class="wp-image-504" srcset="https://anythingagriculture.com/wp-content/uploads/2024/11/flower-bulb.jpg?w=1022 1022w, https://anythingagriculture.com/wp-content/uploads/2024/11/flower-bulb.jpg?w=150 150w, https://anythingagriculture.com/wp-content/uploads/2024/11/flower-bulb.jpg?w=300 300w, https://anythingagriculture.com/wp-content/uploads/2024/11/flower-bulb.jpg?w=768 768w, https://anythingagriculture.com/wp-content/uploads/2024/11/flower-bulb.jpg 1920w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p><strong>Things To Do In The Yard</strong></p>
+
+
+
+<p>Cabin fever has got the best of you. There are a few tasks you can do outside. These tasks will improve your yard and your mood giving you a jump start on spring.</p>
+
+
+
+<p><strong>Salt and Snow Melt</strong></p>
+
+
+
+<p>&nbsp;Avoid using sodium chloride to melt snow and ice on your driveway or sidewalks. This causes damage to the plants in the adjacent areas and can damage any brick work too.&nbsp; Use something safer like potassium chloride or calcium chloride.&nbsp; Better yet, use sand or kitty litter for traction on slick surfaces. This can always be swept up in the spring and won&#8217;t harm your plants.  It can save you a little money too.&nbsp;&nbsp;</p>
+
+
+
+<p><strong>Its Not To Late to Mulch</strong>.</p>
+
+
+<div class="wp-block-image">
+<figure class="alignleft size-large"><img data-attachment-id="505" data-permalink="https://anythingagriculture.com/2024/11/15/winter-care-tips-for-your-homestead/mulch/" data-orig-file="https://anythingagriculture.com/wp-content/uploads/2024/11/mulch.jpg" data-orig-size="1920,1280" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="mulch" data-image-description="" data-image-caption="" data-medium-file="https://anythingagriculture.com/wp-content/uploads/2024/11/mulch.jpg?w=300" data-large-file="https://anythingagriculture.com/wp-content/uploads/2024/11/mulch.jpg?w=750" loading="lazy" width="1024" height="682" src="../../../../wp-content/uploads/2024/11/mulch2dff.jpg?w=1024" alt="" class="wp-image-505" srcset="https://anythingagriculture.com/wp-content/uploads/2024/11/mulch.jpg?w=1024 1024w, https://anythingagriculture.com/wp-content/uploads/2024/11/mulch.jpg?w=150 150w, https://anythingagriculture.com/wp-content/uploads/2024/11/mulch.jpg?w=300 300w, https://anythingagriculture.com/wp-content/uploads/2024/11/mulch.jpg?w=768 768w, https://anythingagriculture.com/wp-content/uploads/2024/11/mulch.jpg 1920w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure></div>
+
+
+<p>&nbsp;If you haven&#8217;t already, make sure you have mulch in your planting beds. Putting a thick layer of straw over root crops protects them. Mulching allows the crops to be harvested all winter long. You can harvest them a little at a time without having to store them inside. &nbsp; This works great with parsnips, carrots, leeks, and beets.&nbsp;</p>
+
+
+
+<p></p>
+
+
+
+<p><strong>Thin Barked Trees</strong></p>
+
+
+<div class="wp-block-image">
+<figure class="alignright size-large"><img data-attachment-id="506" data-permalink="https://anythingagriculture.com/2024/11/15/winter-care-tips-for-your-homestead/tree-wrap/" data-orig-file="https://anythingagriculture.com/wp-content/uploads/2024/11/tree-wrap.jpg" data-orig-size="1920,1277" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="tree wrap" data-image-description="" data-image-caption="" data-medium-file="https://anythingagriculture.com/wp-content/uploads/2024/11/tree-wrap.jpg?w=300" data-large-file="https://anythingagriculture.com/wp-content/uploads/2024/11/tree-wrap.jpg?w=750" loading="lazy" width="1024" height="681" src="../../../../wp-content/uploads/2024/11/tree-wrap2dff.jpg?w=1024" alt="" class="wp-image-506" srcset="https://anythingagriculture.com/wp-content/uploads/2024/11/tree-wrap.jpg?w=1024 1024w, https://anythingagriculture.com/wp-content/uploads/2024/11/tree-wrap.jpg?w=150 150w, https://anythingagriculture.com/wp-content/uploads/2024/11/tree-wrap.jpg?w=300 300w, https://anythingagriculture.com/wp-content/uploads/2024/11/tree-wrap.jpg?w=768 768w, https://anythingagriculture.com/wp-content/uploads/2024/11/tree-wrap.jpg 1920w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure></div>
+
+
+<p>Check young and thin barked trees for splitting. Last month we talked about wrapping these trees with a tree wrap to prevent it.&nbsp; I don&#8217;t recommend using paint of any sort. Paint prevents the tree from getting adequate air to the trunk. Additionally, it can attract insects in the spring. &nbsp; Pay attention to south and southwest facing sides of the tree.&nbsp;&nbsp;If cracking is happening, wrap those tree trunks now. This will give the plant a chance to heal the damage before spring. Make sure that you remove the wrapping just before the spring thaw. This ensures moisture isn&#8217;t being caught, causing rotting in the wound.</p>
+
+
+
+<p><strong>Evergreens In Your Landscape</strong></p>
+
+
+<div class="wp-block-image">
+<figure class="alignright size-large"><img data-attachment-id="508" data-permalink="https://anythingagriculture.com/2024/11/15/winter-care-tips-for-your-homestead/false-ceder-with-snow/" data-orig-file="https://anythingagriculture.com/wp-content/uploads/2024/11/false-ceder-with-snow.jpg" data-orig-size="1920,1280" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="false ceder with snow" data-image-description="" data-image-caption="" data-medium-file="https://anythingagriculture.com/wp-content/uploads/2024/11/false-ceder-with-snow.jpg?w=300" data-large-file="https://anythingagriculture.com/wp-content/uploads/2024/11/false-ceder-with-snow.jpg?w=750" loading="lazy" width="1024" height="682" src="../../../../wp-content/uploads/2024/11/false-ceder-with-snow2dff.jpg?w=1024" alt="" class="wp-image-508" srcset="https://anythingagriculture.com/wp-content/uploads/2024/11/false-ceder-with-snow.jpg?w=1024 1024w, https://anythingagriculture.com/wp-content/uploads/2024/11/false-ceder-with-snow.jpg?w=150 150w, https://anythingagriculture.com/wp-content/uploads/2024/11/false-ceder-with-snow.jpg?w=300 300w, https://anythingagriculture.com/wp-content/uploads/2024/11/false-ceder-with-snow.jpg?w=768 768w, https://anythingagriculture.com/wp-content/uploads/2024/11/false-ceder-with-snow.jpg 1920w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure></div>
+
+
+<p>Look at your landscape&#8217;s broad leaves evergreen plants and evergreen trees. These could be your azalea, rhododendron or boxwood plants. Be on the watch for the leaves turning brown. This can happen due to excessive drying from the wind. If you have a particularly windy place in your landscape, protect those tender plants. Use burlap on the south and west sides to shield them.&nbsp;&nbsp;&nbsp;</p>
+
+
+
+<p><strong>Salt Spray</strong></p>
+
+
+
+<p>Be aware of salt spray from the street. This can cause a lot of damage to your landscape. If you notice salt spray, protect those plants with burlap. Polyethylene plant screens are also a good.&nbsp;&nbsp; White pines, cedars, boxwood and other evergreens are very sensitive to salt spray. These plants will have a difficult time in high traffic areas where salt and snow melt have occurred.  If salt spray is damaging a plant in your landscape, consider removing the plant and replace it in the spring.</p>
+
+
+<div class="wp-block-image">
+<figure class="alignleft size-large"><img data-attachment-id="509" data-permalink="https://anythingagriculture.com/2024/11/15/winter-care-tips-for-your-homestead/now-and-plants/" data-orig-file="https://anythingagriculture.com/wp-content/uploads/2024/11/now-and-plants.jpg" data-orig-size="1920,1277" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="now and plants" data-image-description="" data-image-caption="" data-medium-file="https://anythingagriculture.com/wp-content/uploads/2024/11/now-and-plants.jpg?w=300" data-large-file="https://anythingagriculture.com/wp-content/uploads/2024/11/now-and-plants.jpg?w=750" loading="lazy" width="1024" height="681" src="../../../../wp-content/uploads/2024/11/now-and-plants2dff.jpg?w=1024" alt="" class="wp-image-509" srcset="https://anythingagriculture.com/wp-content/uploads/2024/11/now-and-plants.jpg?w=1024 1024w, https://anythingagriculture.com/wp-content/uploads/2024/11/now-and-plants.jpg?w=150 150w, https://anythingagriculture.com/wp-content/uploads/2024/11/now-and-plants.jpg?w=300 300w, https://anythingagriculture.com/wp-content/uploads/2024/11/now-and-plants.jpg?w=768 768w, https://anythingagriculture.com/wp-content/uploads/2024/11/now-and-plants.jpg 1920w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure></div>
+
+
+<p>Avoid shoveling any snow on shrubs or trees especially if it has salt or snow melt in it. &nbsp;This prevents winter burn of shrubs and keep them healthy.&nbsp;Shoveling snow can break branches and damage the shape of the shrubs too. Be aware of snowplows piling up snow. </p>
+
+
+
+<p><strong>Garden Chemicals and Fertilizers</strong></p>
+
+
+
+<p>Garden chemicals are sensitive to cold and freezing. This includes sprays liquid and fertilizers. Even if you are an organic gardener.&nbsp; Be sure you have them stored in a secure place that doesn&#8217;t freeze. Freezing can make the product unusable in spring. Inspect containers to make sure their labels are intact.  </p>
+
+
+
+<p></p>
+
+
+
+<p><strong>Bulbs and Produce In Storage</strong></p>
+
+
+<div class="wp-block-image">
+<figure class="alignleft size-large"><img data-attachment-id="511" data-permalink="https://anythingagriculture.com/2024/11/15/winter-care-tips-for-your-homestead/onions/" data-orig-file="https://anythingagriculture.com/wp-content/uploads/2024/11/onions.jpg" data-orig-size="1920,1427" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="onions" data-image-description="" data-image-caption="" data-medium-file="https://anythingagriculture.com/wp-content/uploads/2024/11/onions.jpg?w=300" data-large-file="https://anythingagriculture.com/wp-content/uploads/2024/11/onions.jpg?w=750" loading="lazy" width="1024" height="761" src="../../../../wp-content/uploads/2024/11/onions2dff.jpg?w=1024" alt="" class="wp-image-511" srcset="https://anythingagriculture.com/wp-content/uploads/2024/11/onions.jpg?w=1024 1024w, https://anythingagriculture.com/wp-content/uploads/2024/11/onions.jpg?w=150 150w, https://anythingagriculture.com/wp-content/uploads/2024/11/onions.jpg?w=300 300w, https://anythingagriculture.com/wp-content/uploads/2024/11/onions.jpg?w=768 768w, https://anythingagriculture.com/wp-content/uploads/2024/11/onions.jpg 1920w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure></div>
+
+
+<p>Check any produce or tender bulbs in storage.&nbsp; It could be your dahlias or begonia tubers or potatoes. Throw out any bulbs that are molding, softening or shriveling.&nbsp; If you see several bulbs shriveling this indicates there isn&#8217;t enough humidity. You will need to add some humidity to preserve your harvest. One way to do this is to run a humidifier part of time. Leaving open water can lead to unwanted insects and critters getting into your produce.</p>
+
+
+<div class="wp-block-image">
+<figure class="alignright size-large"><img data-attachment-id="513" data-permalink="https://anythingagriculture.com/2024/11/15/winter-care-tips-for-your-homestead/compost-bins/" data-orig-file="https://anythingagriculture.com/wp-content/uploads/2024/11/compost-bins.jpg" data-orig-size="1920,1280" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="compost bins" data-image-description="" data-image-caption="" data-medium-file="https://anythingagriculture.com/wp-content/uploads/2024/11/compost-bins.jpg?w=300" data-large-file="https://anythingagriculture.com/wp-content/uploads/2024/11/compost-bins.jpg?w=750" loading="lazy" width="1024" height="682" src="../../../../wp-content/uploads/2024/11/compost-bins2dff.jpg?w=1024" alt="" class="wp-image-513" srcset="https://anythingagriculture.com/wp-content/uploads/2024/11/compost-bins.jpg?w=1024 1024w, https://anythingagriculture.com/wp-content/uploads/2024/11/compost-bins.jpg?w=150 150w, https://anythingagriculture.com/wp-content/uploads/2024/11/compost-bins.jpg?w=300 300w, https://anythingagriculture.com/wp-content/uploads/2024/11/compost-bins.jpg?w=768 768w, https://anythingagriculture.com/wp-content/uploads/2024/11/compost-bins.jpg 1920w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure></div>
+
+
+<p><strong>Care and Feeding of Your Compost Pile</strong></p>
+
+
+
+<p>Turn your compost pile to ensure it is warm enough to destroy pathogens and weed seeds. Turning your compost pile encourages it to break down. turning in to wonderful compost for next years garden. &nbsp; If your compost pile is not warm enough make sure to add more green items like kitchen scraps. Make sure you are adding to your compost pile, so it is ready for spring. Good compost is the secret to a great garden.</p>
+
+
+
+<p><strong>Frost Heaves</strong></p>
+
+
+
+<p>Check for frost heaving. Frost heaving when the ground thaws and freezes. This can cause shallow rooted perennials to lift out of the ground. Indiana has a lot of these freeze-thaw cycles. If you discovered roots that have been pushed out of the ground gently push the roots back into the soil. If the soil is too frozen to put the roots back, cover roots with 3-4 inches of mulch. This should protect the roots until a thaw cycle to put the roots back underground.</p>
+
+
+
+<h2 class="wp-block-heading">Creature Feature</h2>
+
+
+
+<p><strong>Frozen water </strong></p>
+
+
+<div class="wp-block-image">
+<figure class="alignleft size-large is-resized"><img data-attachment-id="515" data-permalink="https://anythingagriculture.com/2024/11/15/winter-care-tips-for-your-homestead/feeding-cows/" data-orig-file="https://anythingagriculture.com/wp-content/uploads/2024/11/feeding-cows.jpg" data-orig-size="1281,1920" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="feeding cows" data-image-description="" data-image-caption="" data-medium-file="https://anythingagriculture.com/wp-content/uploads/2024/11/feeding-cows.jpg?w=200" data-large-file="https://anythingagriculture.com/wp-content/uploads/2024/11/feeding-cows.jpg?w=683" loading="lazy" width="683" height="1023" src="../../../../wp-content/uploads/2024/11/feeding-cowsb3cd.jpg?w=683" alt="" class="wp-image-515" style="width:397px;height:auto" srcset="https://anythingagriculture.com/wp-content/uploads/2024/11/feeding-cows.jpg?w=683 683w, https://anythingagriculture.com/wp-content/uploads/2024/11/feeding-cows.jpg?w=100 100w, https://anythingagriculture.com/wp-content/uploads/2024/11/feeding-cows.jpg?w=200 200w, https://anythingagriculture.com/wp-content/uploads/2024/11/feeding-cows.jpg?w=768 768w, https://anythingagriculture.com/wp-content/uploads/2024/11/feeding-cows.jpg 1281w" sizes="(max-width: 683px) 100vw, 683px" /></figure></div>
+
+
+<p>By now you are probably had to deal with frozen water. Frozen livestock water is the bane of almost all animal farmers. It doesn&#8217;t matter, chickens to cattle everyone deals with frozen water sometimes. There are hundreds of &#8220;tried and true &#8221; ways to keep your water open. There are a lot of homemade DIY solutions, and some may work for you. Each farm is unique, and some work better than others. The following are the main ways that water is kept open for livestock. Let me know what works for you. I would love to see your ideas. Lets explore: electric heaters, nesting tanks, heated hoses, insulated buckets, solar options, composting, freeze miser, propane heaters, constant water flow and pop bottles with salt.</p>
+
+
+
+<ul class="wp-block-list">
+<li>There are many types of electric heaters out on the market for every type of animal. These can range from being pretty inexpensive to very expensive. Some have many bells and whistles to ensure your water is open and animals are safe. The biggest drawback to electric waters is the need of having electricity run to where your water is needed. This can get complicated when you have multiple waters to run. Running extension cords can be dangerous if they are not rated for wet areas. Animals can chew on the cords becoming a shock risk. It&#8217;s a good idea to have an electrician check your electricity. Ensure your circuits can handle the extra load and have not been damaged over the summer. Barn fires happen all the time, most are caused by electrical issues. This extra step can save you thousands of dollars and a world heartache.</li>
+</ul>
+
+
+
+<div class="wp-block-premium-content-container wp-block-premium-content-container">
+
+
+<div class="wp-block-premium-content-logged-out-view entry-content">
+<h3 class="wp-block-heading">Subscribe to get access</h3>
+
+
+
+<p>For just $2 a month you get access to all that Anything Agriculture has to offer. Join today to finish this newsletter and get complete access to all subscriber content.  you will also be the first to know about new classes and products.  </p>
+
+
+
+<div class="wp-block-premium-content-buttons wp-block-buttons">
+<div class="wp-block-jetpack-recurring-payments wp-block-button"><div class="wp-block-jetpack-button wp-block-button" style=""><a class="wp-block-button__link" style="" data-id-attr="recurring-payments-396" id="recurring-payments-396" href="https://subscribe.wordpress.com/memberships/?blog=236739157&amp;plan=396&amp;lang=en&amp;pid=355&amp;redirect=https%3A%2F%2Fanythingagriculture.com%2F2024%2F11%2F15%2Fwinter-care-tips-for-your-homestead" target="_blank" role="button" rel="noopener noreferrer">Subscribe</a></div></div>
+
+
+
+<div class="wp-block-premium-content-login-button wp-block-button"><a class="wp-block-button__link" href="https://wordpress.com/log-in/link?redirect_to=https%3A%2F%2Fr-login.wordpress.com%2Fremote-login.php%3Faction%3Dlink%26back%3Dhttps%253A%252F%252Fanythingagriculture.com%252F2024%252F11%252F15%252Fwinter-care-tips-for-your-homestead%252F">Log in</a></div>
+</div>
+</div>
+</div>
+
+
+<div class="wp-block-image">
+<figure class="alignright size-large is-resized"><img data-attachment-id="516" data-permalink="https://anythingagriculture.com/2024/11/15/winter-care-tips-for-your-homestead/frozen-water-and-pasture/" data-orig-file="https://anythingagriculture.com/wp-content/uploads/2024/11/frozen-water-and-pasture.jpg" data-orig-size="1920,1323" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="frozen water and pasture" data-image-description="" data-image-caption="" data-medium-file="https://anythingagriculture.com/wp-content/uploads/2024/11/frozen-water-and-pasture.jpg?w=300" data-large-file="https://anythingagriculture.com/wp-content/uploads/2024/11/frozen-water-and-pasture.jpg?w=750" loading="lazy" width="1024" height="705" src="../../../../wp-content/uploads/2024/11/frozen-water-and-pasture2dff.jpg?w=1024" alt="" class="wp-image-516" style="width:267px;height:auto" srcset="https://anythingagriculture.com/wp-content/uploads/2024/11/frozen-water-and-pasture.jpg?w=1024 1024w, https://anythingagriculture.com/wp-content/uploads/2024/11/frozen-water-and-pasture.jpg?w=150 150w, https://anythingagriculture.com/wp-content/uploads/2024/11/frozen-water-and-pasture.jpg?w=300 300w, https://anythingagriculture.com/wp-content/uploads/2024/11/frozen-water-and-pasture.jpg?w=768 768w, https://anythingagriculture.com/wp-content/uploads/2024/11/frozen-water-and-pasture.jpg 1920w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure></div>
+
+
+<p>Have a plan for bad weather. There is always seems to have a cold snap after a bad storm. Such storms often leave you with no electricity or access to water. Come up with a plan for making sure you have water for your animals.  </p>
+
+
+
+<p>Let me know what the worst chore during winter.  </p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-large"><img data-attachment-id="526" data-permalink="https://anythingagriculture.com/2024/11/15/winter-care-tips-for-your-homestead/winter-farm-stead/" data-orig-file="https://anythingagriculture.com/wp-content/uploads/2024/11/winter-farm-stead.jpg" data-orig-size="1920,1280" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="winter farm stead" data-image-description="" data-image-caption="" data-medium-file="https://anythingagriculture.com/wp-content/uploads/2024/11/winter-farm-stead.jpg?w=300" data-large-file="https://anythingagriculture.com/wp-content/uploads/2024/11/winter-farm-stead.jpg?w=750" loading="lazy" width="1024" height="682" src="../../../../wp-content/uploads/2024/11/winter-farm-stead2dff.jpg?w=1024" alt="" class="wp-image-526" srcset="https://anythingagriculture.com/wp-content/uploads/2024/11/winter-farm-stead.jpg?w=1024 1024w, https://anythingagriculture.com/wp-content/uploads/2024/11/winter-farm-stead.jpg?w=150 150w, https://anythingagriculture.com/wp-content/uploads/2024/11/winter-farm-stead.jpg?w=300 300w, https://anythingagriculture.com/wp-content/uploads/2024/11/winter-farm-stead.jpg?w=768 768w, https://anythingagriculture.com/wp-content/uploads/2024/11/winter-farm-stead.jpg 1920w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure></div>
+
+
+<p>Happy Holidays to all</p>
+
+
+
+<p>Like and subscribe to my blog Anything Agriculture.com Be ahead of everyone else with timely articles and information. Give the gift of knowledge, subscribe to my newsletter and buy a subscription for a friend.&nbsp;&nbsp;This is a great time of year to start planning for next year&#8217;s garden and homestead projects. &nbsp;&nbsp;</p>
+
+
+
+<p>Subject to copyright</p>
+
+
+
+<p>Thank you for reading! If you want more information and updates, please subscribe to my newsletter. Get the latest blog posts and new offers right in your email. It’s free to subscribe, and you&#8217;ll receive loads of information at no cost.</p>
+
+
+	<div class="wp-block-jetpack-subscriptions__supports-newline wp-block-jetpack-subscriptions">
+		<div class="wp-block-jetpack-subscriptions__container is-not-subscriber">
+							<form
+					action="https://wordpress.com/email-subscriptions"
+					method="post"
+					accept-charset="utf-8"
+					data-blog="236739157"
+					data-post_access_level="everybody"
+					data-subscriber_email=""
+					id="subscribe-blog"
+				>
+					<div class="wp-block-jetpack-subscriptions__form-elements">
+												<p id="subscribe-email">
+							<label
+								id="subscribe-field-label"
+								for="subscribe-field"
+								class="screen-reader-text"
+							>
+								Type your email…							</label>
+							<input
+									required="required"
+									type="email"
+									name="email"
+									class="no-border-radius "
+									style="font-size: 16px;padding: 15px 23px 15px 23px;border-radius: 0px;border-width: 1px;"
+									placeholder="Type your email…"
+									value=""
+									id="subscribe-field"
+									title="Please fill in this field."
+								/>						</p>
+												<p id="subscribe-submit"
+													>
+							<input type="hidden" name="action" value="subscribe"/>
+							<input type="hidden" name="blog_id" value="236739157"/>
+							<input type="hidden" name="source" value="index.html"/>
+							<input type="hidden" name="sub-type" value="subscribe-block"/>
+							<input type="hidden" name="app_source" value=""/>
+							<input type="hidden" name="redirect_fragment" value="subscribe-blog"/>
+							<input type="hidden" name="lang" value="en"/>
+							<input type="hidden" id="_wpnonce" name="_wpnonce" value="0a0e391c0a" /><input type="hidden" name="_wp_http_referer" value="/2024/11/15/winter-care-tips-for-your-homestead/" /><input type="hidden" name="post_id" value="355"/>							<button type="submit"
+																	class="wp-block-button__link no-border-radius"
+																									style="font-size: 16px;padding: 15px 23px 15px 23px;margin: 0; margin-left: 10px;border-radius: 0px;border-width: 1px;"
+																name="jetpack_subscriptions_widget"
+							>
+								Subscribe							</button>
+						</p>
+					</div>
+				</form>
+								</div>
+	</div>
+	
+
+
+<p>Don&#8217;t forget to check out Anything Agriculture on social media! Follow us on <a href="https://www.youtube.com/@AnythingAgriculture">YouTube</a>, <a href="https://www.facebook.com/profile.php?id=61565350006143">Facebook</a>,<a href="https://www.instagram.com/anythingagriculture/"> Instagram</a>, and Pinterest for more great content. Like and subscribe to stay connected!</p>
+
+
+
+<figure class="wp-block-embed is-type-rich is-provider-pinterest wp-block-embed-pinterest"><div class="wp-block-embed__wrapper">
+<a data-pin-do="embedUser" href="https://www.pinterest.com/anythingagriculture/"></a>
+</div></figure>
+
+
+
+<p>Ready to take your homesteading journey to the next level? Book an appointment with me today! With decades of experience, I provide personalized advice to solve any homesteading challenge. Whether you&#8217;re a newbie or a seasoned homesteader, I offer expert guidance to make your homestead thrive. Don&#8217;t miss out—schedule a chat and unlock the full potential of your homestead with Anything Agriculture. Let&#8217;s turn your dreams into reality!</p>
+
+
+<div data-test='contact-form' id='contact-form-355' class='wp-block-jetpack-contact-form-container '>
+<form action='https://anythingagriculture.com/2024/11/15/winter-care-tips-for-your-homestead/#contact-form-355' method='post' class='contact-form commentsblock wp-block-jetpack-contact-form' aria-label="Winter Care Tips for Your Homestead" novalidate>
+
+<div class="wp-block-jetpack-contact-form" style="padding-top:16px;padding-right:16px;padding-bottom:16px;padding-left:16px">
+<div style="" class='grunion-field-name-wrap grunion-field-wrap'  >
+<label
+				for='g355-name'
+				class='grunion-field-label name'>Name<span class="grunion-label-required" aria-hidden="true">(required)</span></label>
+<input
+					type='text'
+					name='g355-name'
+					id='g355-name'
+					value=''
+					class='name  grunion-field' 
+					required aria-required='true' />
+	</div>
+
+
+
+<div style="" class='grunion-field-email-wrap grunion-field-wrap'  >
+<label
+				for='g355-email'
+				class='grunion-field-label email'>Email<span class="grunion-label-required" aria-hidden="true">(required)</span></label>
+<input
+					type='email'
+					name='g355-email'
+					id='g355-email'
+					value=''
+					class='email  grunion-field' 
+					required aria-required='true' />
+	</div>
+
+
+
+<div style="" class='grunion-field-telephone-wrap grunion-field-wrap'  >
+<label
+				for='g355-phone'
+				class='grunion-field-label telephone'>Phone</label>
+<input
+					type='tel'
+					name='g355-phone'
+					id='g355-phone'
+					value=''
+					class='telephone  grunion-field' 
+					 />
+	</div>
+
+
+
+<div style="" class='grunion-field-select-wrap grunion-field-wrap'  >
+<label
+				for='g355-howdidyouhearaboutus'
+				class='grunion-field-label select'>How did you hear about us?</label>
+<div class='contact-form__select-wrapper'>	<select name='g355-howdidyouhearaboutus' id='g355-howdidyouhearaboutus' class='select  grunion-field' >
+		<option value=''>Select one option</option>
+		<option value='Search Engine'>Search Engine</option>
+		<option value='Social Media'>Social Media</option>
+		<option value='TV'>TV</option>
+		<option value='Radio'>Radio</option>
+		<option value='Friend or Family'>Friend or Family</option>
+	</select>
+</div>
+	</div>
+
+
+
+<div style="" class='grunion-field-textarea-wrap grunion-field-wrap'  >
+<label
+				for='contact-form-comment-g355-otherdetails'
+				class='grunion-field-label textarea'>Other Details</label>
+<textarea
+		                style=''
+		                name='g355-otherdetails'
+		                id='contact-form-comment-g355-otherdetails'
+		                rows='20' class='textarea  grunion-field'  ></textarea>
+	</div>
+
+
+<div class="wp-block-jetpack-button wp-block-button" style=""><button class="wp-block-button__link" style="" data-id-attr="placeholder" type="submit">Send</button></div></div>
+		<input type='hidden' name='contact-form-id' value='355' />
+		<input type='hidden' name='action' value='grunion-contact-form' />
+		<input type='hidden' name='contact-form-hash' value='979c7e68c23eb8c9ecbd4cf6fe78fda87bc05d05' />
+<p style="display: none !important;" class="akismet-fields-container" data-prefix="ak_"><label>&#916;<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="ak_js" value="90"/><script>document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );</script></p></form>
+</div>
+
+
+<p></p>
+<div id="jp-post-flair" class="sharedaddy sd-like-enabled sd-sharing-enabled"><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><h3 class="sd-title">Share this:</h3><div class="sd-content"><ul><li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-355" class="share-twitter sd-button share-icon" href="index9a7b.html?share=twitter" target="_blank" title="Click to share on Twitter" ><span>Twitter</span></a></li><li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-355" class="share-facebook sd-button share-icon" href="index5a58.html?share=facebook" target="_blank" title="Click to share on Facebook" ><span>Facebook</span></a></li><li class="share-end"></li></ul></div></div></div><div class='sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-unloaded' id='like-post-wrapper-236739157-355-67e6ab792d89e' data-src='http://widgets.wp.com/likes/index.html?ver=20250328#blog_id=236739157&amp;post_id=355&amp;origin=anythingagriculture.wordpress.com&amp;obj_id=236739157-355-67e6ab792d89e&amp;domain=anythingagriculture.com' data-name='like-post-frame-236739157-355-67e6ab792d89e' data-title='Like or Reblog'><div class='likes-widget-placeholder post-likes-widget-placeholder' style='height: 55px;'><span class='button'><span>Like</span></span> <span class='loading'>Loading...</span></div><span class='sd-text-color'></span><a class='sd-link-color'></a></div>
+<div id='jp-relatedposts' class='jp-relatedposts' >
+	<h3 class="jp-relatedposts-headline"><em>Related</em></h3>
+</div></div>	</div><!-- .entry-content -->
+
+	<footer class="entry-footer responsive-max-width">
+		<span class="byline"><svg class="svg-icon" width="16" height="16" aria-hidden="true" role="img" focusable="false" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg><span class="screen-reader-text">Posted by</span><span class="author vcard"><a class="url fn n" href="../../../../author/anythingagriculture/index.html">Ann Delchambre</a></span></span><span class="posted-on"><svg class="svg-icon" width="16" height="16" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><defs><path id="a" d="M0 0h24v24H0V0z"></path></defs><clipPath id="b"><use xlink:href="#a" overflow="visible"></use></clipPath><path clip-path="url(#b)" d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z"></path></svg><a href="index.html" rel="bookmark"><time class="entry-date published" datetime="2024-11-15T10:02:18-05:00">November 15, 2024</time><time class="updated" datetime="2025-02-07T13:00:03-05:00">February 7, 2025</time></a></span><span class="cat-links"><svg class="svg-icon" width="16" height="16" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg><span class="screen-reader-text">Posted in</span><a href="../../../../category/newsletters/index.html" rel="category tag">Newsletters</a></span><span class="tags-links"><svg class="svg-icon" width="16" height="16" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg><span class="screen-reader-text">Tags:</span><a href="../../../../tag/animal-in-winter/index.html" rel="tag">Animal in winter</a>, <a href="../../../../tag/bucket/index.html" rel="tag">Bucket</a>, <a href="../../../../tag/christmas-tree-2/index.html" rel="tag">Christmas Tree</a>, <a href="../../../../tag/compost-pile/index.html" rel="tag">Compost Pile</a>, <a href="../../../../tag/electric-heaters/index.html" rel="tag">Electric Heaters</a>, <a href="../../../../tag/evergreen/index.html" rel="tag">evergreen</a>, <a href="../../../../tag/farm-animals/index.html" rel="tag">Farm animals</a>, <a href="../../../../tag/flowers/index.html" rel="tag">flowers</a>, <a href="../../../../tag/forced-bulb/index.html" rel="tag">Forced Bulb</a>, <a href="../../../../tag/freeze-miser/index.html" rel="tag">Freeze miser</a>, <a href="../../../../tag/fresh-greenery/index.html" rel="tag">Fresh greenery</a>, <a href="../../../../tag/frost-heave/index.html" rel="tag">Frost heave</a>, <a href="../../../../tag/frozen-water/index.html" rel="tag">Frozen water</a>, <a href="../../../../tag/garden/index.html" rel="tag">garden</a>, <a href="../../../../tag/gardening/index.html" rel="tag">Gardening</a>, <a href="../../../../tag/gardening-tips/index.html" rel="tag">gardening-tips</a>, <a href="../../../../tag/holly/index.html" rel="tag">Holly</a>, <a href="../../../../tag/horticulture/index.html" rel="tag">Horticulture</a>, <a href="../../../../tag/livestock/index.html" rel="tag">Livestock</a>, <a href="../../../../tag/mulch/index.html" rel="tag">mulch</a>, <a href="../../../../tag/plants/index.html" rel="tag">Plants</a>, <a href="../../../../tag/propane-heater/index.html" rel="tag">Propane Heater</a>, <a href="../../../../tag/salt-spray/index.html" rel="tag">Salt spray</a>, <a href="../../../../tag/sodium-cholorde/index.html" rel="tag">Sodium Cholorde</a>, <a href="../../../../tag/soil/index.html" rel="tag">Soil</a>, <a href="../../../../tag/winter-homestead/index.html" rel="tag">Winter homestead</a>, <a href="../../../../tag/yard-work/index.html" rel="tag">Yard work</a></span>	</footer><!-- .entry-footer -->
+
+				
+</article><!-- #post-${ID} -->
+
+	<nav class="navigation post-navigation" aria-label="Posts">
+		<h2 class="screen-reader-text">Post navigation</h2>
+		<div class="nav-links"><div class="nav-previous"><a href="../../08/why-choose-a-real-christmas-tree-this-holiday/index.html" rel="prev"><span class="meta-nav" aria-hidden="true">Previous Post</span> <span class="screen-reader-text">Previous post:</span> <br/><span class="post-title">Why Choose a Real Christmas Tree This&nbsp;Holiday</span></a></div><div class="nav-next"><a href="../../22/top-tips-to-prevent-frozen-water-for-animals/index.html" rel="next"><span class="meta-nav" aria-hidden="true">Next Post</span> <span class="screen-reader-text">Next post:</span> <br/><span class="post-title">Top Tips to Prevent Frozen Water for&nbsp;Animals</span></a></div></div>
+	</nav>
+<div id="comments" class="comments-area responsive-max-width">
+
+		<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a comment <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3><form action="https://anythingagriculture.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+
+
+
+<div class="comment-form__verbum transparent"></div><div class="verbum-form-meta"><input type='hidden' name='comment_post_ID' value='355' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+
+			<input type="hidden" name="highlander_comment_nonce" id="highlander_comment_nonce" value="8415e51265" />
+			<input type="hidden" name="verbum_show_subscription_modal" value="" /></div><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="c275cbb090" /></p><p style="display: none !important;" class="akismet-fields-container" data-prefix="ak_"><label>&#916;<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_2" name="ak_js" value="27"/><script>document.getElementById( "ak_js_2" ).setAttribute( "value", ( new Date() ).getTime() );</script></p></form>	</div><!-- #respond -->
+	
+</div><!-- #comments -->
+
+		</main><!-- #main -->
+	</section><!-- #primary -->
+
+
+	</div><!-- #content -->
+
+	
+	<footer id="colophon" class="site-footer responsive-max-width">
+			
+	
+		<div class="site-info">
+		<a class="site-name" href="../../../../index.html" rel="home">Anything Agriculture</a><span class="comma">,</span>
+<a href="https://wordpress.com/?ref=footer_blog" rel="nofollow">Blog at WordPress.com.</a>	</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+
+</div><!-- #page -->
+
+<!--  -->
+<script type="text/javascript" src="http://0.gravatar.com/js/hovercards/hovercards.min.js?ver=2025137d8bf6c02970a26c6b0c26b0fcfc89796aa30f84307cffd8fd28d2bcca53dd7a" id="grofiles-cards-js"></script>
+<script type="text/javascript" id="wpgroho-js-extra">
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script crossorigin='anonymous' type='text/javascript'  src='https://s2.wp.com/wp-content/mu-plugins/gravatar-hovercards/wpgroho.js?m=1610363240i'></script>
+
+	<script>
+		// Initialize and attach hovercards to all gravatars
+		( function() {
+			function init() {
+				if ( typeof Gravatar === 'undefined' ) {
+					return;
+				}
+
+				if ( typeof Gravatar.init !== 'function' ) {
+					return;
+				}
+
+				Gravatar.profile_cb = function ( hash, id ) {
+					WPGroHo.syncProfileData( hash, id );
+				};
+
+				Gravatar.my_hash = WPGroHo.my_hash;
+				Gravatar.init(
+					'body',
+					'#wp-admin-bar-my-account',
+					{
+						i18n: {
+							'Edit your profile →': 'Edit your profile →',
+							'View profile →': 'View profile →',
+							'Contact': 'Contact',
+							'Send money': 'Send money',
+							'Sorry, we are unable to load this Gravatar profile.': 'Sorry, we are unable to load this Gravatar profile.',
+							'Profile not found.': 'Profile not found.',
+							'Too Many Requests.': 'Too Many Requests.',
+							'Internal Server Error.': 'Internal Server Error.',
+						},
+					}
+				);
+			}
+
+			if ( document.readyState !== 'loading' ) {
+				init();
+			} else {
+				document.addEventListener( 'DOMContentLoaded', init );
+			}
+		} )();
+	</script>
+
+		<div style="display:none">
+	</div>
+		<div id="actionbar" dir="ltr" style="display: none;"
+			class="actnbr-pub-barnsbury actnbr-has-follow actnbr-has-actions">
+		<ul>
+								<li class="actnbr-btn actnbr-hidden">
+						<a class="actnbr-action actnbr-actn-comment" href="index.html#respond">
+							<svg class="gridicon gridicons-comment" height="20" width="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g><path d="M12 16l-5 5v-5H5c-1.1 0-2-.9-2-2V5c0-1.1.9-2 2-2h14c1.1 0 2 .9 2 2v9c0 1.1-.9 2-2 2h-7z"/></g></svg>							<span>Comment						</span>
+						</a>
+					</li>
+									<li class="actnbr-btn actnbr-hidden">
+						<a class="actnbr-action actnbr-actn-reblog" href="#">
+							<svg class="gridicon gridicons-reblog" height="20" width="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g><path d="M22.086 9.914L20 7.828V18c0 1.105-.895 2-2 2h-7v-2h7V7.828l-2.086 2.086L14.5 8.5 19 4l4.5 4.5-1.414 1.414zM6 16.172V6h7V4H6c-1.105 0-2 .895-2 2v10.172l-2.086-2.086L.5 15.5 5 20l4.5-4.5-1.414-1.414L6 16.172z"/></g></svg><span>Reblog</span>
+						</a>
+					</li>
+									<li class="actnbr-btn actnbr-hidden">
+								<a class="actnbr-action actnbr-actn-follow " href="#">
+			<svg class="gridicon" height="20" width="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path clip-rule="evenodd" d="m4 4.5h12v6.5h1.5v-6.5-1.5h-1.5-12-1.5v1.5 10.5c0 1.1046.89543 2 2 2h7v-1.5h-7c-.27614 0-.5-.2239-.5-.5zm10.5 2h-9v1.5h9zm-5 3h-4v1.5h4zm3.5 1.5h-1v1h1zm-1-1.5h-1.5v1.5 1 1.5h1.5 1 1.5v-1.5-1-1.5h-1.5zm-2.5 2.5h-4v1.5h4zm6.5 1.25h1.5v2.25h2.25v1.5h-2.25v2.25h-1.5v-2.25h-2.25v-1.5h2.25z"  fill-rule="evenodd"></path></svg>
+			<span>Subscribe</span>
+		</a>
+		<a class="actnbr-action actnbr-actn-following  no-display" href="#">
+			<svg class="gridicon" height="20" width="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill-rule="evenodd" clip-rule="evenodd" d="M16 4.5H4V15C4 15.2761 4.22386 15.5 4.5 15.5H11.5V17H4.5C3.39543 17 2.5 16.1046 2.5 15V4.5V3H4H16H17.5V4.5V12.5H16V4.5ZM5.5 6.5H14.5V8H5.5V6.5ZM5.5 9.5H9.5V11H5.5V9.5ZM12 11H13V12H12V11ZM10.5 9.5H12H13H14.5V11V12V13.5H13H12H10.5V12V11V9.5ZM5.5 12H9.5V13.5H5.5V12Z" fill="#008A20"></path><path class="following-icon-tick" d="M13.5 16L15.5 18L19 14.5" stroke="#008A20" stroke-width="1.5"></path></svg>
+			<span>Subscribed</span>
+		</a>
+							<div class="actnbr-popover tip tip-top-left actnbr-notice" id="follow-bubble">
+							<div class="tip-arrow"></div>
+							<div class="tip-inner actnbr-follow-bubble">
+															<ul>
+											<li class="actnbr-sitename">
+			<a href="../../../../index.html">
+				<img loading='lazy' alt='' src='../../../../wp-content/uploads/2025/02/cropped-logo-from-canva-3ae05.png?w=50' srcset='https://anythingagriculture.com/wp-content/uploads/2025/02/cropped-logo-from-canva-3.png?w=50 1x, https://anythingagriculture.com/wp-content/uploads/2025/02/cropped-logo-from-canva-3.png?w=75 1.5x, https://anythingagriculture.com/wp-content/uploads/2025/02/cropped-logo-from-canva-3.png?w=100 2x, https://anythingagriculture.com/wp-content/uploads/2025/02/cropped-logo-from-canva-3.png?w=150 3x, https://anythingagriculture.com/wp-content/uploads/2025/02/cropped-logo-from-canva-3.png?w=200 4x' class='avatar avatar-50' height='50' width='50' />				Anything Agriculture			</a>
+		</li>
+										<div class="actnbr-message no-display"></div>
+									<form method="post" action="https://subscribe.wordpress.com/" accept-charset="utf-8" style="display: none;">
+																				<div>
+										<input type="email" name="email" placeholder="Enter your email address" class="actnbr-email-field" aria-label="Enter your email address" />
+										</div>
+										<input type="hidden" name="action" value="subscribe" />
+										<input type="hidden" name="blog_id" value="236739157" />
+										<input type="hidden" name="source" value="index.html" />
+										<input type="hidden" name="sub-type" value="actionbar-follow" />
+										<input type="hidden" id="_wpnonce" name="_wpnonce" value="0a0e391c0a" />										<div class="actnbr-button-wrap">
+											<button type="submit" value="Sign me up">
+												Sign me up											</button>
+										</div>
+									</form>
+									<li class="actnbr-login-nudge">
+										<div>
+											Already have a WordPress.com account? <a href="https://wordpress.com/log-in?redirect_to=https%3A%2F%2Fr-login.wordpress.com%2Fremote-login.php%3Faction%3Dlink%26back%3Dhttps%253A%252F%252Fanythingagriculture.com%252F2024%252F11%252F15%252Fwinter-care-tips-for-your-homestead%252F">Log in now.</a>										</div>
+									</li>
+								</ul>
+															</div>
+						</div>
+					</li>
+							<li class="actnbr-ellipsis actnbr-hidden">
+				<svg class="gridicon gridicons-ellipsis" height="24" width="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g><path d="M7 12c0 1.104-.896 2-2 2s-2-.896-2-2 .896-2 2-2 2 .896 2 2zm12-2c-1.104 0-2 .896-2 2s.896 2 2 2 2-.896 2-2-.896-2-2-2zm-7 0c-1.104 0-2 .896-2 2s.896 2 2 2 2-.896 2-2-.896-2-2-2z"/></g></svg>				<div class="actnbr-popover tip tip-top-left actnbr-more">
+					<div class="tip-arrow"></div>
+					<div class="tip-inner">
+						<ul>
+								<li class="actnbr-sitename">
+			<a href="../../../../index.html">
+				<img loading='lazy' alt='' src='../../../../wp-content/uploads/2025/02/cropped-logo-from-canva-3ae05.png?w=50' srcset='https://anythingagriculture.com/wp-content/uploads/2025/02/cropped-logo-from-canva-3.png?w=50 1x, https://anythingagriculture.com/wp-content/uploads/2025/02/cropped-logo-from-canva-3.png?w=75 1.5x, https://anythingagriculture.com/wp-content/uploads/2025/02/cropped-logo-from-canva-3.png?w=100 2x, https://anythingagriculture.com/wp-content/uploads/2025/02/cropped-logo-from-canva-3.png?w=150 3x, https://anythingagriculture.com/wp-content/uploads/2025/02/cropped-logo-from-canva-3.png?w=200 4x' class='avatar avatar-50' height='50' width='50' />				Anything Agriculture			</a>
+		</li>
+								<li class="actnbr-folded-follow">
+										<a class="actnbr-action actnbr-actn-follow " href="#">
+			<svg class="gridicon" height="20" width="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path clip-rule="evenodd" d="m4 4.5h12v6.5h1.5v-6.5-1.5h-1.5-12-1.5v1.5 10.5c0 1.1046.89543 2 2 2h7v-1.5h-7c-.27614 0-.5-.2239-.5-.5zm10.5 2h-9v1.5h9zm-5 3h-4v1.5h4zm3.5 1.5h-1v1h1zm-1-1.5h-1.5v1.5 1 1.5h1.5 1 1.5v-1.5-1-1.5h-1.5zm-2.5 2.5h-4v1.5h4zm6.5 1.25h1.5v2.25h2.25v1.5h-2.25v2.25h-1.5v-2.25h-2.25v-1.5h2.25z"  fill-rule="evenodd"></path></svg>
+			<span>Subscribe</span>
+		</a>
+		<a class="actnbr-action actnbr-actn-following  no-display" href="#">
+			<svg class="gridicon" height="20" width="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill-rule="evenodd" clip-rule="evenodd" d="M16 4.5H4V15C4 15.2761 4.22386 15.5 4.5 15.5H11.5V17H4.5C3.39543 17 2.5 16.1046 2.5 15V4.5V3H4H16H17.5V4.5V12.5H16V4.5ZM5.5 6.5H14.5V8H5.5V6.5ZM5.5 9.5H9.5V11H5.5V9.5ZM12 11H13V12H12V11ZM10.5 9.5H12H13H14.5V11V12V13.5H13H12H10.5V12V11V9.5ZM5.5 12H9.5V13.5H5.5V12Z" fill="#008A20"></path><path class="following-icon-tick" d="M13.5 16L15.5 18L19 14.5" stroke="#008A20" stroke-width="1.5"></path></svg>
+			<span>Subscribed</span>
+		</a>
+								</li>
+														<li class="actnbr-signup"><a href="https://wordpress.com/start/">Sign up</a></li>
+							<li class="actnbr-login"><a href="https://wordpress.com/log-in?redirect_to=https%3A%2F%2Fr-login.wordpress.com%2Fremote-login.php%3Faction%3Dlink%26back%3Dhttps%253A%252F%252Fanythingagriculture.com%252F2024%252F11%252F15%252Fwinter-care-tips-for-your-homestead%252F">Log in</a></li>
+																<li class="actnbr-shortlink">
+										<a href="https://wp.me/pg1kFv-5J">
+											<span class="actnbr-shortlink__text">Copy shortlink</span>
+											<span class="actnbr-shortlink__icon"><svg class="gridicon gridicons-checkmark" height="16" width="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g><path d="M9 19.414l-6.707-6.707 1.414-1.414L9 16.586 20.293 5.293l1.414 1.414"/></g></svg></span>
+										</a>
+									</li>
+																<li class="flb-report">
+									<a href="https://wordpress.com/abuse/?report_url=https://anythingagriculture.com/2024/11/15/winter-care-tips-for-your-homestead/" target="_blank" rel="noopener noreferrer">
+										Report this content									</a>
+								</li>
+															<li class="actnbr-reader">
+									<a href="https://wordpress.com/reader/blogs/236739157/posts/355">
+										View post in Reader									</a>
+								</li>
+															<li class="actnbr-subs">
+									<a href="https://subscribe.wordpress.com/">Manage subscriptions</a>
+								</li>
+																<li class="actnbr-fold"><a href="#">Collapse this bar</a></li>
+														</ul>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+	
+<script>
+window.addEventListener( "load", function( event ) {
+	var link = document.createElement( "link" );
+	link.href = "https://s0.wp.com/wp-content/mu-plugins/actionbar/actionbar.css?v=20250116";
+	link.type = "text/css";
+	link.rel = "stylesheet";
+	document.head.appendChild( link );
+
+	var script = document.createElement( "script" );
+	script.src = "https://s0.wp.com/wp-content/mu-plugins/actionbar/actionbar.js?v=20250204";
+	script.defer = true;
+	document.body.appendChild( script );
+} );
+</script>
+
+			<div id="jp-carousel-loading-overlay">
+			<div id="jp-carousel-loading-wrapper">
+				<span id="jp-carousel-library-loading">&nbsp;</span>
+			</div>
+		</div>
+		<div class="jp-carousel-overlay" style="display: none;">
+
+		<div class="jp-carousel-container">
+			<!-- The Carousel Swiper -->
+			<div
+				class="jp-carousel-wrap swiper-container jp-carousel-swiper-container jp-carousel-transitions"
+				itemscope
+				itemtype="https://schema.org/ImageGallery">
+				<div class="jp-carousel swiper-wrapper"></div>
+				<div class="jp-swiper-button-prev swiper-button-prev">
+					<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<mask id="maskPrev" mask-type="alpha" maskUnits="userSpaceOnUse" x="8" y="6" width="9" height="12">
+							<path d="M16.2072 16.59L11.6496 12L16.2072 7.41L14.8041 6L8.8335 12L14.8041 18L16.2072 16.59Z" fill="white"/>
+						</mask>
+						<g mask="url(#maskPrev)">
+							<rect x="0.579102" width="23.8823" height="24" fill="#FFFFFF"/>
+						</g>
+					</svg>
+				</div>
+				<div class="jp-swiper-button-next swiper-button-next">
+					<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<mask id="maskNext" mask-type="alpha" maskUnits="userSpaceOnUse" x="8" y="6" width="8" height="12">
+							<path d="M8.59814 16.59L13.1557 12L8.59814 7.41L10.0012 6L15.9718 12L10.0012 18L8.59814 16.59Z" fill="white"/>
+						</mask>
+						<g mask="url(#maskNext)">
+							<rect x="0.34375" width="23.8822" height="24" fill="#FFFFFF"/>
+						</g>
+					</svg>
+				</div>
+			</div>
+			<!-- The main close buton -->
+			<div class="jp-carousel-close-hint">
+				<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<mask id="maskClose" mask-type="alpha" maskUnits="userSpaceOnUse" x="5" y="5" width="15" height="14">
+						<path d="M19.3166 6.41L17.9135 5L12.3509 10.59L6.78834 5L5.38525 6.41L10.9478 12L5.38525 17.59L6.78834 19L12.3509 13.41L17.9135 19L19.3166 17.59L13.754 12L19.3166 6.41Z" fill="white"/>
+					</mask>
+					<g mask="url(#maskClose)">
+						<rect x="0.409668" width="23.8823" height="24" fill="#FFFFFF"/>
+					</g>
+				</svg>
+			</div>
+			<!-- Image info, comments and meta -->
+			<div class="jp-carousel-info">
+				<div class="jp-carousel-info-footer">
+					<div class="jp-carousel-pagination-container">
+						<div class="jp-swiper-pagination swiper-pagination"></div>
+						<div class="jp-carousel-pagination"></div>
+					</div>
+					<div class="jp-carousel-photo-title-container">
+						<h2 class="jp-carousel-photo-caption"></h2>
+					</div>
+					<div class="jp-carousel-photo-icons-container">
+						<a href="#" class="jp-carousel-icon-btn jp-carousel-icon-info" aria-label="Toggle photo metadata visibility">
+							<span class="jp-carousel-icon">
+								<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<mask id="maskInfo" mask-type="alpha" maskUnits="userSpaceOnUse" x="2" y="2" width="21" height="20">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M12.7537 2C7.26076 2 2.80273 6.48 2.80273 12C2.80273 17.52 7.26076 22 12.7537 22C18.2466 22 22.7046 17.52 22.7046 12C22.7046 6.48 18.2466 2 12.7537 2ZM11.7586 7V9H13.7488V7H11.7586ZM11.7586 11V17H13.7488V11H11.7586ZM4.79292 12C4.79292 16.41 8.36531 20 12.7537 20C17.142 20 20.7144 16.41 20.7144 12C20.7144 7.59 17.142 4 12.7537 4C8.36531 4 4.79292 7.59 4.79292 12Z" fill="white"/>
+									</mask>
+									<g mask="url(#maskInfo)">
+										<rect x="0.8125" width="23.8823" height="24" fill="#FFFFFF"/>
+									</g>
+								</svg>
+							</span>
+						</a>
+												<a href="#" class="jp-carousel-icon-btn jp-carousel-icon-comments" aria-label="Toggle photo comments visibility">
+							<span class="jp-carousel-icon">
+								<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<mask id="maskComments" mask-type="alpha" maskUnits="userSpaceOnUse" x="2" y="2" width="21" height="20">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M4.3271 2H20.2486C21.3432 2 22.2388 2.9 22.2388 4V16C22.2388 17.1 21.3432 18 20.2486 18H6.31729L2.33691 22V4C2.33691 2.9 3.2325 2 4.3271 2ZM6.31729 16H20.2486V4H4.3271V18L6.31729 16Z" fill="white"/>
+									</mask>
+									<g mask="url(#maskComments)">
+										<rect x="0.34668" width="23.8823" height="24" fill="#FFFFFF"/>
+									</g>
+								</svg>
+
+								<span class="jp-carousel-has-comments-indicator" aria-label="This image has comments."></span>
+							</span>
+						</a>
+											</div>
+				</div>
+				<div class="jp-carousel-info-extra">
+					<div class="jp-carousel-info-content-wrapper">
+						<div class="jp-carousel-photo-title-container">
+							<h2 class="jp-carousel-photo-title"></h2>
+						</div>
+						<div class="jp-carousel-comments-wrapper">
+															<div id="jp-carousel-comments-loading">
+									<span>Loading Comments...</span>
+								</div>
+								<div class="jp-carousel-comments"></div>
+								<div id="jp-carousel-comment-form-container">
+									<span id="jp-carousel-comment-form-spinner">&nbsp;</span>
+									<div id="jp-carousel-comment-post-results"></div>
+																														<form id="jp-carousel-comment-form">
+												<label for="jp-carousel-comment-form-comment-field" class="screen-reader-text">Write a Comment...</label>
+												<textarea
+													name="comment"
+													class="jp-carousel-comment-form-field jp-carousel-comment-form-textarea"
+													id="jp-carousel-comment-form-comment-field"
+													placeholder="Write a Comment..."
+												></textarea>
+												<div id="jp-carousel-comment-form-submit-and-info-wrapper">
+													<div id="jp-carousel-comment-form-commenting-as">
+																													<fieldset>
+																<label for="jp-carousel-comment-form-email-field">Email (Required)</label>
+																<input type="text" name="email" class="jp-carousel-comment-form-field jp-carousel-comment-form-text-field" id="jp-carousel-comment-form-email-field" />
+															</fieldset>
+															<fieldset>
+																<label for="jp-carousel-comment-form-author-field">Name (Required)</label>
+																<input type="text" name="author" class="jp-carousel-comment-form-field jp-carousel-comment-form-text-field" id="jp-carousel-comment-form-author-field" />
+															</fieldset>
+															<fieldset>
+																<label for="jp-carousel-comment-form-url-field">Website</label>
+																<input type="text" name="url" class="jp-carousel-comment-form-field jp-carousel-comment-form-text-field" id="jp-carousel-comment-form-url-field" />
+															</fieldset>
+																											</div>
+													<input
+														type="submit"
+														name="submit"
+														class="jp-carousel-comment-form-button"
+														id="jp-carousel-comment-form-button-submit"
+														value="Post Comment" />
+												</div>
+											</form>
+																											</div>
+													</div>
+						<div class="jp-carousel-image-meta">
+							<div class="jp-carousel-title-and-caption">
+								<div class="jp-carousel-photo-info">
+									<h3 class="jp-carousel-caption" itemprop="caption description"></h3>
+								</div>
+
+								<div class="jp-carousel-photo-description"></div>
+							</div>
+							<ul class="jp-carousel-image-exif" style="display: none;"></ul>
+							<a class="jp-carousel-image-download" href="#" target="_blank" style="display: none;">
+								<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="3" y="3" width="19" height="18">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M5.84615 5V19H19.7775V12H21.7677V19C21.7677 20.1 20.8721 21 19.7775 21H5.84615C4.74159 21 3.85596 20.1 3.85596 19V5C3.85596 3.9 4.74159 3 5.84615 3H12.8118V5H5.84615ZM14.802 5V3H21.7677V10H19.7775V6.41L9.99569 16.24L8.59261 14.83L18.3744 5H14.802Z" fill="white"/>
+									</mask>
+									<g mask="url(#mask0)">
+										<rect x="0.870605" width="23.8823" height="24" fill="#FFFFFF"/>
+									</g>
+								</svg>
+								<span class="jp-carousel-download-text"></span>
+							</a>
+							<div class="jp-carousel-image-map" style="display: none;"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		</div>
+		
+	<script type="text/javascript">
+		window.WPCOM_sharing_counts = {"https:\/\/anythingagriculture.com\/2024\/11\/15\/winter-care-tips-for-your-homestead\/":355};
+	</script>
+				<style id='jetpack-block-button-inline-css'>
+.amp-wp-article .wp-block-jetpack-button{color:#fff}.wp-block-jetpack-button{height:fit-content;margin:0;max-width:100%;width:fit-content}.wp-block-jetpack-button.aligncenter,.wp-block-jetpack-button.alignleft,.wp-block-jetpack-button.alignright{display:block}.wp-block-jetpack-button.aligncenter{margin-left:auto;margin-right:auto}.wp-block-jetpack-button.alignleft{margin-right:auto}.wp-block-jetpack-button.alignright{margin-left:auto}.wp-block-jetpack-button.is-style-outline>.wp-block-button__link{background-color:#0000;border:1px solid;color:currentColor}.wp-block-jetpack-button:not(.is-style-outline) button{border:none}
+</style>
+<style id='jetpack-block-recurring-payments-inline-css'>
+@keyframes jetpack-memberships_button__spinner-animation{to{transform:rotate(1turn)}}.jetpack-memberships-spinner{display:none;height:1em;margin:0 0 0 5px;width:1em}.jetpack-memberships-spinner svg{height:100%;margin-bottom:-2px;width:100%}.jetpack-memberships-spinner-rotating{animation:jetpack-memberships_button__spinner-animation .75s linear infinite;transform-origin:center}.is-loading .jetpack-memberships-spinner{display:inline-block}body.jetpack-memberships-modal-open{overflow:hidden}dialog.jetpack-memberships-modal{opacity:1}dialog.jetpack-memberships-modal,dialog.jetpack-memberships-modal iframe{background:#0000;border:0;bottom:0;box-shadow:none;height:100%;left:0;margin:0;padding:0;position:fixed;right:0;top:0;width:100%}dialog.jetpack-memberships-modal::backdrop{background-color:#000;opacity:.7;transition:opacity .2s ease-out}dialog.jetpack-memberships-modal.is-loading,dialog.jetpack-memberships-modal.is-loading::backdrop{opacity:0}.wp-block-jetpack-recurring-payments.aligncenter .wp-block-jetpack-button{text-align:center}.wp-block-jetpack-recurring-payments .wp-block-jetpack-button{width:100%}
+</style>
+<style id='jetpack-block-premium-content-inline-css'>
+.wp-block-premium-content-container .components-notice-list .components-notice__content{margin:0}.wp-block-premium-content-logged-out-view .wp-block-jetpack-recurring-payments{--jetpack-payment-buttons-gap:0.5em;display:inline-block;margin-inline-end:.5em}.wp-block-premium-content-login-button.aligncenter{align-items:center;display:flex;justify-content:center}.wp-block-premium-content-login-button.alignright{float:right}.wp-block-jetpack-button.is-style-outline .wp-block-button__link,.wp-block-premium-content-login-button.is-style-outline .wp-block-button__link{background-color:unset;color:#2f2f2f}.wp-block-premium-content-logged-out-view__buttons{display:flex;margin-top:20px}.wp-block-premium-content-logged-out-view__buttons .wp-block-button__link{margin-inline-end:20px}@media(min-width:660px){.wp-block-premium-content-logged-out-view__buttons .wp-block-button__link{min-width:200px}}
+</style>
+<style id='jetpack-block-subscriptions-inline-css'>
+.is-style-compact .is-not-subscriber .wp-block-button__link,.is-style-compact .is-not-subscriber .wp-block-jetpack-subscriptions__button{border-end-start-radius:0!important;border-start-start-radius:0!important;margin-inline-start:0!important}.is-style-compact .is-not-subscriber .components-text-control__input,.is-style-compact .is-not-subscriber p#subscribe-email input[type=email]{border-end-end-radius:0!important;border-start-end-radius:0!important}.is-style-compact:not(.wp-block-jetpack-subscriptions__use-newline) .components-text-control__input{border-inline-end-width:0!important}.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline .wp-block-jetpack-subscriptions__form-container{display:flex;flex-direction:column}.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline:not(.wp-block-jetpack-subscriptions__use-newline) .is-not-subscriber .wp-block-jetpack-subscriptions__form-elements{align-items:flex-start;display:flex}.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline:not(.wp-block-jetpack-subscriptions__use-newline) p#subscribe-submit{display:flex;justify-content:center}.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline .wp-block-jetpack-subscriptions__form .wp-block-jetpack-subscriptions__button,.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline .wp-block-jetpack-subscriptions__form .wp-block-jetpack-subscriptions__textfield .components-text-control__input,.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline .wp-block-jetpack-subscriptions__form button,.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline .wp-block-jetpack-subscriptions__form input[type=email],.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline form .wp-block-jetpack-subscriptions__button,.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline form .wp-block-jetpack-subscriptions__textfield .components-text-control__input,.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline form button,.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline form input[type=email]{box-sizing:border-box;cursor:pointer;line-height:1.3;min-width:auto!important;white-space:nowrap!important}.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline .wp-block-jetpack-subscriptions__form .wp-block-jetpack-subscriptions__button[contenteditable=true],.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline form .wp-block-jetpack-subscriptions__button[contenteditable=true]{white-space:pre-wrap!important}.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline .wp-block-jetpack-subscriptions__form input[type=email]::placeholder,.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline .wp-block-jetpack-subscriptions__form input[type=email]:disabled,.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline form input[type=email]::placeholder,.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline form input[type=email]:disabled{color:currentColor;opacity:.5}.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline .wp-block-jetpack-subscriptions__form .wp-block-jetpack-subscriptions__button,.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline .wp-block-jetpack-subscriptions__form button,.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline form .wp-block-jetpack-subscriptions__button,.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline form button{border-color:#0000;border-style:solid}.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline .wp-block-jetpack-subscriptions__form .wp-block-jetpack-subscriptions__textfield,.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline .wp-block-jetpack-subscriptions__form p#subscribe-email,.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline form .wp-block-jetpack-subscriptions__textfield,.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline form p#subscribe-email{background:#0000;flex-grow:1}.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline .wp-block-jetpack-subscriptions__form .wp-block-jetpack-subscriptions__textfield .components-base-control__field,.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline .wp-block-jetpack-subscriptions__form .wp-block-jetpack-subscriptions__textfield .components-text-control__input,.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline .wp-block-jetpack-subscriptions__form .wp-block-jetpack-subscriptions__textfield input[type=email],.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline .wp-block-jetpack-subscriptions__form p#subscribe-email .components-base-control__field,.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline .wp-block-jetpack-subscriptions__form p#subscribe-email .components-text-control__input,.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline .wp-block-jetpack-subscriptions__form p#subscribe-email input[type=email],.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline form .wp-block-jetpack-subscriptions__textfield .components-base-control__field,.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline form .wp-block-jetpack-subscriptions__textfield .components-text-control__input,.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline form .wp-block-jetpack-subscriptions__textfield input[type=email],.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline form p#subscribe-email .components-base-control__field,.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline form p#subscribe-email .components-text-control__input,.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline form p#subscribe-email input[type=email]{height:auto;margin:0;width:100%}.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline .wp-block-jetpack-subscriptions__form p#subscribe-email,.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline .wp-block-jetpack-subscriptions__form p#subscribe-submit,.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline form p#subscribe-email,.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline form p#subscribe-submit{line-height:0;margin:0;padding:0}.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline.wp-block-jetpack-subscriptions__show-subs .wp-block-jetpack-subscriptions__subscount{font-size:16px;margin:8px 0;text-align:end}.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline.wp-block-jetpack-subscriptions__use-newline .wp-block-jetpack-subscriptions__form-elements{display:block}.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline.wp-block-jetpack-subscriptions__use-newline .wp-block-jetpack-subscriptions__button,.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline.wp-block-jetpack-subscriptions__use-newline button{display:inline-block;max-width:100%}.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline.wp-block-jetpack-subscriptions__use-newline .wp-block-jetpack-subscriptions__subscount{text-align:start}#subscribe-submit.is-link{text-align:center;width:auto!important}#subscribe-submit.is-link a{margin-left:0!important;margin-top:0!important;width:auto!important}@keyframes jetpack-memberships_button__spinner-animation{to{transform:rotate(1turn)}}.jetpack-memberships-spinner{display:none;height:1em;margin:0 0 0 5px;width:1em}.jetpack-memberships-spinner svg{height:100%;margin-bottom:-2px;width:100%}.jetpack-memberships-spinner-rotating{animation:jetpack-memberships_button__spinner-animation .75s linear infinite;transform-origin:center}.is-loading .jetpack-memberships-spinner{display:inline-block}body.jetpack-memberships-modal-open{overflow:hidden}dialog.jetpack-memberships-modal{opacity:1}dialog.jetpack-memberships-modal,dialog.jetpack-memberships-modal iframe{background:#0000;border:0;bottom:0;box-shadow:none;height:100%;left:0;margin:0;padding:0;position:fixed;right:0;top:0;width:100%}dialog.jetpack-memberships-modal::backdrop{background-color:#000;opacity:.7;transition:opacity .2s ease-out}dialog.jetpack-memberships-modal.is-loading,dialog.jetpack-memberships-modal.is-loading::backdrop{opacity:0}
+</style>
+<link crossorigin='anonymous' rel='stylesheet' id='all-css-8-2' href='https://s1.wp.com/_static/??-eJyljcEKAjEMRH/IGhWhehA/RWobl65tUprE/X1dcT0L3mYewxuYmotMiqRQzbViQyaBEbWFeP90EKMFXR5IiTsEU65BNcfv+Ma9CqQsCrMyRH0jiCIwdKPMtH7lFfz8WTlZQYEYOptgAZlyw+6uRqngv7Jls4DZd66nrd/v/OHo/WZ8AsiXbGA=&amp;cssminify=yes' type='text/css' media='all' />
+<script type="text/javascript" src="https://s1.wp.com/wp-content/js/mobile-useragent-info.js?m=1609849039i&amp;ver=20241018" id="mobile-useragent-info-js" defer="defer" data-wp-strategy="defer"></script>
+<script type="text/javascript" id="verbum-settings-js-before">
+/* <![CDATA[ */
+window.VerbumComments = {"Log in or provide your name and email to leave a reply.":"Log in or provide your name and email to leave a reply.","Log in or provide your name and email to leave a comment.":"Log in or provide your name and email to leave a comment.","Receive web and mobile notifications for posts on this site.":"Receive web and mobile notifications for posts on this site.","Name":"Name","Email (address never made public)":"Email (address never made public)","Website (optional)":"Website (optional)","Leave a reply. (log in optional)":"Leave a reply. (log in optional)","Leave a comment. (log in optional)":"Leave a comment. (log in optional)","Log in to leave a reply.":"Log in to leave a reply.","Log in to leave a comment.":"Log in to leave a comment.","Logged in via %s":"Logged in via %s","Log out":"Log out","Email":"Email","(Address never made public)":"(Address never made public)","Instantly":"Instantly","Daily":"Daily","Reply":"Reply","Comment":"Comment","WordPress":"WordPress","Weekly":"Weekly","Notify me of new posts":"Notify me of new posts","Email me new posts":"Email me new posts","Email me new comments":"Email me new comments","Cancel":"Cancel","Write a comment...":"Write a comment...","Write a reply...":"Write a reply...","Website":"Website","Optional":"Optional","We'll keep you in the loop!":"We'll keep you in the loop!","Loading your comment...":"Loading your comment...","Discover more from":"Discover more from Anything Agriculture","Subscribe now to keep reading and get access to the full archive.":"Subscribe now to keep reading and get access to the full archive.","Continue reading":"Continue reading","Never miss a beat!":"Never miss a beat!","Interested in getting blog post updates? Simply click the button below to stay in the loop!":"Interested in getting blog post updates? Simply click the button below to stay in the loop!","Enter your email address":"Enter your email address","Subscribe":"Subscribe","Comment sent successfully":"Comment sent successfully","Save my name, email, and website in this browser for the next time I comment.":"Save my name, email, and website in this browser for the next time I comment.","siteId":236739157,"postId":355,"mustLogIn":false,"requireNameEmail":true,"commentRegistration":false,"connectURL":"https:\/\/anythingagriculture.wordpress.com\/public.api\/connect\/?action=request&domain=anythingagriculture.com","logoutURL":"https:\/\/anythingagriculture.wordpress.com\/wp-login.php?action=logout&_wpnonce=bf83e413e0","homeURL":"https:\/\/anythingagriculture.com\/","subscribeToBlog":true,"subscribeToComment":true,"isJetpackCommentsLoggedIn":false,"jetpackUsername":"","jetpackUserId":0,"jetpackSignature":"","jetpackAvatar":"https:\/\/0.gravatar.com\/avatar\/?s=96&amp;d=identicon&amp;r=G","enableBlocks":true,"enableSubscriptionModal":true,"currentLocale":"en","isJetpackComments":false,"allowedBlocks":["core\/paragraph","core\/list","core\/code","core\/list-item","core\/quote","core\/image","core\/embed","core\/quote","core\/code"],"embedNonce":"c7afa9bd97","verbumBundleUrl":"https:\/\/s2.wp.com\/wp-content\/mu-plugins\/jetpack-mu-wpcom-plugin\/sun\/jetpack_vendor\/automattic\/jetpack-mu-wpcom\/src\/features\/verbum-comments\/dist\/index.js","isRTL":false,"vbeCacheBuster":1738686361,"iframeUniqueId":0,"colorScheme":false}
+/* ]]> */
+</script>
+<script crossorigin='anonymous' type='text/javascript'  src='https://s0.wp.com/wp-content/mu-plugins/likes/queuehandler.js?m=1741961244i'></script>
+<script type="text/javascript" src="https://s1.wp.com/wp-content/mu-plugins/jetpack-mu-wpcom-plugin/sun/jetpack_vendor/automattic/jetpack-mu-wpcom/src/build/verbum-comments/assets/dynamic-loader.js?m=1741800217i&amp;minify=false&amp;ver=74baca08b8baf473b8a0" id="verbum-dynamic-loader-js" defer="defer" data-wp-strategy="defer"></script>
+<script type="text/javascript" id="comment-like-js-extra">
+/* <![CDATA[ */
+var comment_like_text = {"loading":"Loading...","swipeUrl":"https:\/\/s2.wp.com\/wp-content\/mu-plugins\/comment-likes\/js\/lib\/swipe.js?ver=20131008"};
+/* ]]> */
+</script>
+<script crossorigin='anonymous' type='text/javascript'  src='https://s2.wp.com/_static/??-eJxdjEkOgzAMAD/UYKEWOFV9ixsi6jR2rCwgfk84cGivo5mBTY2NUpwU4Go01IUkg43MDZlAX5fB/4HO5xu0kMSGOv8KyWnYOya5pOtePo6bqvUNKybCM9JEjGk3gistWCie1Yuf/fS49+MwDaM/AC/0Oww='></script>
+<script type="text/javascript" src="http://assets.pinterest.com/js/pinit.js?ver=14.5-a.10" id="pinterest-embed-js"></script>
+<script type="text/javascript" id="jetpack-blocks-assets-base-url-js-before">
+/* <![CDATA[ */
+var Jetpack_Block_Assets_Base_Url="https://s0.wp.com/wp-content/mu-plugins/jetpack-plugin/sun/_inc/blocks/";
+/* ]]> */
+</script>
+<script type="text/javascript" crossorigin='anonymous' src="https://s0.wp.com/wp-content/plugins/gutenberg-core/v20.0.4/build/dom-ready/index.min.js?m=1741299224i&amp;ver=222ad38e3e5e302c8bbf" id="wp-dom-ready-js"></script>
+<script crossorigin='anonymous' type='text/javascript'  src='https://s1.wp.com/_static/??-eJyljkEOgzAMBD9UMBUHyqHqUyoILjIkjhXHIH7fVKp4QHvcXc1oYZeK2HmbUGFRmEgzbMhTTFAmif54kfd1IK4XvXw6FzkjZwhWibeZuICYZXDrN4Maw7NYYfTRrQoJnaVEPFcyHKGwChvh/rtQEgaycJL/2dRGdYkkU+Tz2SPcr13bt33TdLflDc7KbsE='></script>
+<script type="text/javascript" crossorigin='anonymous' src="https://s0.wp.com/wp-content/plugins/gutenberg-core/v20.0.4/build/hooks/index.min.js?m=1741299224i&amp;ver=84e753e2b66eb7028d38" id="wp-hooks-js"></script>
+<script type="text/javascript" crossorigin='anonymous' src="https://s0.wp.com/wp-content/plugins/gutenberg-core/v20.0.4/build/i18n/index.min.js?m=1741299224i&amp;ver=bd5a2533e717a1043151" id="wp-i18n-js"></script>
+<script type="text/javascript" id="wp-i18n-js-after">
+/* <![CDATA[ */
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+/* ]]> */
+</script>
+<script crossorigin='anonymous' type='text/javascript'  src='https://s0.wp.com/wp-content/mu-plugins/jetpack-plugin/sun/jetpack_vendor/automattic/jetpack-forms/dist/blocks/view.js?m=1725882066i'></script>
+<script type="text/javascript" src="https://s1.wp.com/wp-content/mu-plugins/jetpack-plugin/sun/jetpack_vendor/automattic/jetpack-forms/dist/contact-form/js/accessible-form.js?m=1743018899i&amp;minify=false&amp;ver=14.5-a.10" id="accessible-form-js" defer="defer" data-wp-strategy="defer"></script>
+<script type="text/javascript" id="jetpack-carousel-js-extra">
+/* <![CDATA[ */
+var jetpackSwiperLibraryPath = {"url":"https:\/\/s2.wp.com\/wp-content\/mu-plugins\/jetpack-plugin\/sun\/_inc\/build\/carousel\/swiper-bundle.min.js"};
+var jetpackCarouselStrings = {"widths":[370,700,1000,1200,1400,2000],"is_logged_in":"","lang":"en","ajaxurl":"https:\/\/anythingagriculture.com\/wp-admin\/admin-ajax.php","nonce":"6580173039","display_exif":"1","display_comments":"1","single_image_gallery":"1","single_image_gallery_media_file":"","background_color":"black","comment":"Comment","post_comment":"Post Comment","write_comment":"Write a Comment...","loading_comments":"Loading Comments...","image_label":"Open image in full-screen.","download_original":"View full size <span class=\"photo-size\">{0}<span class=\"photo-size-times\">\u00d7<\/span>{1}<\/span>","no_comment_text":"Please be sure to submit some text with your comment.","no_comment_email":"Please provide an email address to comment.","no_comment_author":"Please provide your name to comment.","comment_post_error":"Sorry, but there was an error posting your comment. Please try again later.","comment_approved":"Your comment was approved.","comment_unapproved":"Your comment is in moderation.","camera":"Camera","aperture":"Aperture","shutter_speed":"Shutter Speed","focal_length":"Focal Length","copyright":"Copyright","comment_registration":"0","require_name_email":"1","login_url":"https:\/\/anythingagriculture.wordpress.com\/wp-login.php?redirect_to=https%3A%2F%2Fanythingagriculture.com%2F2024%2F11%2F15%2Fwinter-care-tips-for-your-homestead%2F","blog_id":"236739157","meta_data":["camera","aperture","shutter_speed","focal_length","copyright"],"stats_query_args":"blog=236739157&v=wpcom&tz=-4&user_id=0&subd=anythingagriculture","is_public":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" id="sharing-js-js-extra">
+/* <![CDATA[ */
+var sharing_js_options = {"lang":"en","counts":"1","is_stats_active":"1"};
+/* ]]> */
+</script>
+<script crossorigin='anonymous' type='text/javascript'  src='https://s0.wp.com/_static/??-eJx9T0sOwiAUvJDwbEg1LoxHMRSwPgoPwieNtzepxYUx7GYm88nAGpkKVAwV8JVFV2ekDNaUKNWyc8iV4I6kYKroNCiZQs3GfW1N4B6J23yA/61ywexNYYIfP3VNeKTNrDvZNsHWqIL/oZ1c/0l+ymS01Pq1QaR5v3Dz1+EsxGU4jWK0b+Q5bTY='></script>
+<script type="text/javascript" id="sharing-js-js-after">
+/* <![CDATA[ */
+var windowOpen;
+			( function () {
+				function matches( el, sel ) {
+					return !! (
+						el.matches && el.matches( sel ) ||
+						el.msMatchesSelector && el.msMatchesSelector( sel )
+					);
+				}
+
+				document.body.addEventListener( 'click', function ( event ) {
+					if ( ! event.target ) {
+						return;
+					}
+
+					var el;
+					if ( matches( event.target, 'a.share-twitter' ) ) {
+						el = event.target;
+					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-twitter' ) ) {
+						el = event.target.parentNode;
+					}
+
+					if ( el ) {
+						event.preventDefault();
+
+						// If there's another sharing window open, close it.
+						if ( typeof windowOpen !== 'undefined' ) {
+							windowOpen.close();
+						}
+						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+						return false;
+					}
+				} );
+			} )();
+var windowOpen;
+			( function () {
+				function matches( el, sel ) {
+					return !! (
+						el.matches && el.matches( sel ) ||
+						el.msMatchesSelector && el.msMatchesSelector( sel )
+					);
+				}
+
+				document.body.addEventListener( 'click', function ( event ) {
+					if ( ! event.target ) {
+						return;
+					}
+
+					var el;
+					if ( matches( event.target, 'a.share-facebook' ) ) {
+						el = event.target;
+					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-facebook' ) ) {
+						el = event.target.parentNode;
+					}
+
+					if ( el ) {
+						event.preventDefault();
+
+						// If there's another sharing window open, close it.
+						if ( typeof windowOpen !== 'undefined' ) {
+							windowOpen.close();
+						}
+						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+						return false;
+					}
+				} );
+			} )();
+/* ]]> */
+</script>
+	<script>
+	/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
+	</script>
+	
+	<script type="text/javascript">
+		(function () {
+			var wpcom_reblog = {
+				source: 'toolbar',
+
+				toggle_reblog_box_flair: function (obj_id, post_id) {
+
+					// Go to site selector. This will redirect to their blog if they only have one.
+					const postEndpoint = `https://wordpress.com/post`;
+
+					// Ideally we would use the permalink here, but fortunately this will be replaced with the 
+					// post permalink in the editor.
+					const originalURL = `${ document.location.href }?page_id=${ post_id }`; 
+					
+					const url =
+						postEndpoint +
+						'?url=' +
+						encodeURIComponent( originalURL ) +
+						'&is_post_share=true' +
+						'&v=5';
+
+					const redirect = function () {
+						if (
+							! window.open( url, '_blank' )
+						) {
+							location.href = url;
+						}
+					};
+
+					if ( /Firefox/.test( navigator.userAgent ) ) {
+						setTimeout( redirect, 0 );
+					} else {
+						redirect();
+					}
+				},
+			};
+
+			window.wpcom_reblog = wpcom_reblog;
+		})();
+	</script>
+	<iframe src='https://widgets.wp.com/likes/master.html?ver=20250328#ver=20250328&amp;origin=https://anythingagriculture.com' scrolling='no' id='likes-master' name='likes-master' style='display:none;'></iframe>
+	<div id='likes-other-gravatars' class='wpl-new-layout' role="dialog" aria-hidden="true" tabindex="-1">
+		<div class="likes-text">
+			<span>%d</span>		</div>
+		<ul class="wpl-avatars sd-like-gravatars"></ul>
+	</div>
+
+		<script src="http://stats.wp.com/w.js?68" defer></script> <script type="text/javascript">
+_tkq = window._tkq || [];
+_stq = window._stq || [];
+_tkq.push(['storeContext', {'blog_id':'236739157','blog_tz':'-4','user_lang':'en','blog_lang':'en','user_id':'0'}]);
+_stq.push(['view', {'blog':'236739157','v':'wpcom','tz':'-4','user_id':'0','post':'355','subd':'anythingagriculture'}]);
+_stq.push(['extra', {'crypt':'UE40eW5QN0p8M2Y/RE1mNzc2NTVTamdsd0xoLz9RQkM2K298TXY9bERQMXc2MjhEaVZfb2wwakRoSj0mUkp1THptM1NdbkV1WjZIcU9mVWQmPUIvMlN6Jk8wW3NYVEJ3dWZOWExuWD9IZTJ3fm5kdC9wXWQyW2Y1WzlIMEhHeTkxWkRVaFFtOFNtW0NKUWFmTENYbDY2S3EyQjNmTVVQOXxvNU96ak5ULTZGclF1aEwwR1VKOVh8Tm5PaFpBbFEzR1gmV3VFdD9NR2RPZy9rSW5EMHRndDN3ZXRjVTU9SGVwV0RBQW9GNG9aOHpMMEE/cEN3bVAlaD1EK1ZKdWRQKzU1TnA0R3JsLDllNnRCVFkzXXh3JVVVLHpOTklpP0hLXzE9UWdjZw=='}]);
+_stq.push([ 'clickTrackerInit', '236739157', '355' ]);
+</script>
+<noscript><img src="https://pixel.wp.com/b.gif?v=noscript" style="height:1px;width:1px;overflow:hidden;position:absolute;bottom:1px;" alt="" /></noscript>
+<script defer id="bilmur" data-customproperties="{&quot;enq_wp-polyfill&quot;:&quot;1&quot;,&quot;logged_in&quot;:&quot;0&quot;,&quot;wptheme&quot;:&quot;pub\/barnsbury&quot;,&quot;wptheme_is_block&quot;:&quot;0&quot;}" data-provider="wordpress.com" data-service="simple" data-site-tz="America/Indiana/Indianapolis"   src="../../../../wp-content/js/bilmur-4.min5db9.js?i=12&amp;m=202513"></script><script>
+( function() {
+	function getMobileUserAgentInfo() {
+		if ( typeof wpcom_mobile_user_agent_info === 'object' ) {
+			wpcom_mobile_user_agent_info.init();
+			var mobileStatsQueryString = '';
+
+			if ( wpcom_mobile_user_agent_info.matchedPlatformName !== false ) {
+				mobileStatsQueryString += '&x_' + 'mobile_platforms' + '=' + wpcom_mobile_user_agent_info.matchedPlatformName;
+			}
+
+			if ( wpcom_mobile_user_agent_info.matchedUserAgentName !== false ) {
+				mobileStatsQueryString += '&x_' + 'mobile_devices' + '=' + wpcom_mobile_user_agent_info.matchedUserAgentName;
+			}
+
+			if ( wpcom_mobile_user_agent_info.isIPad() ) {
+				mobileStatsQueryString += '&x_' + 'ipad_views' + '=' + 'views';
+			}
+
+			if ( mobileStatsQueryString != '' ) {
+				new Image().src = document.location.protocol + '//pixel.wp.com/g.gif?v=wpcom-no-pv' + mobileStatsQueryString + '&baba=' + Math.random();
+			}
+		}
+	}
+
+	document.addEventListener( 'DOMContentLoaded', getMobileUserAgentInfo );
+} )();
+</script>
+<script>
+(function() {
+	'use strict';
+
+	const fetches = {};
+	const promises = {};
+	const urls = {
+		'verbum': 'https://s2.wp.com/wp-content/mu-plugins/jetpack-mu-wpcom-plugin/sun/jetpack_vendor/automattic/jetpack-mu-wpcom/src/build/verbum-comments/verbum-comments.js?m=1739372488i&minify=false&ver=9d441fa76e2f0f23ffc9'
+	};
+	const loaders = {
+		'verbum': () => {
+			fetchExternalScript('verbum');
+			promises['verbum'] = promises['verbum'] || loadWPScript('verbum');
+			return promises['verbum'];
+		},
+		
+	};
+	const scriptExtras = {
+		
+	};
+
+	window.WP_Enqueue_Dynamic_Script = {
+		loadScript: (handle) => {
+			if (!loaders[handle]) {
+				console.error('WP_Enqueue_Dynamic_Script: unregistered script `' + handle + '`.');
+			}
+			return loaders[handle]();
+		}
+	};
+
+	function fetchExternalScript(handle) {
+		if (!urls[handle]) {
+			return Promise.resolve();
+		}
+
+		fetches[handle] = fetches[handle] || fetch(urls[handle], { mode: 'no-cors' });
+		return fetches[handle];
+	}
+
+	function runExtraScript(handle, type, index) {
+		const id = 'wp-enqueue-dynamic-script:' + handle + ':' + type + ':' + (index + 1);
+		const template = document.getElementById(id);
+		if (!template) {
+			return Promise.reject();
+		}
+
+		const script = document.createElement( 'script' );
+		script.innerHTML = template.innerHTML;
+		document.body.appendChild( script );
+		return Promise.resolve();
+	}
+
+	function loadExternalScript(handle) {
+		if (!urls[handle]) {
+			return Promise.resolve();
+		}
+
+		return fetches[handle].then(() => {
+			return new Promise((resolve, reject) => {
+				const script = document.createElement('script');
+				script.onload = () => resolve();
+				script.onerror = (e) => reject(e);
+				script.src = urls[handle];
+				document.body.appendChild(script);
+			});
+		});
+	}
+
+	function loadExtra(handle, pos) {
+		const count = (scriptExtras[handle] && scriptExtras[handle][pos]) || 0;
+		let promise = Promise.resolve();
+
+		for (let i = 0; i < count; i++) {
+			promise = promise.then(() => runExtraScript(handle, pos, i));
+		}
+
+		return promise;
+	}
+
+	function loadWPScript(handle) {
+		// Core loads scripts in this order. See: https://github.com/WordPress/WordPress/blob/a59eb9d39c4fcba834b70c9e8dfd64feeec10ba6/wp-includes/class-wp-scripts.php#L428.
+		return loadExtra(handle, 'translations')
+			.then(() => loadExtra(handle, 'before'))
+			.then(() => loadExternalScript(handle))
+			.then(() => loadExtra(handle, 'after'));
+	}
+} )();
+</script>
+
+</body>
+
+<!-- Mirrored from anythingagriculture.com/2024/11/15/winter-care-tips-for-your-homestead/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 28 Mar 2025 14:13:22 GMT -->
+</html>
